@@ -1,6 +1,7 @@
 package cucumber.framework.runner.jcadmin;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.awt.AWTException;
@@ -15,13 +16,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class JCTambahAboutImpl {
+public class JCAdminAboutImpl {
 	private static WebDriver driver;
 	private static ExtentTest extentTest;
 	private JCAdminAboutPage JCAbout;
 	String strDelay = Constants.GLOB_PARAM_DELAY;
 	
-	public JCTambahAboutImpl() {
+	public JCAdminAboutImpl() {
 		driver = JCAdminHooks.driver;
 		extentTest = JCAdminHooks.extentTest;
 		driver.get(Constants.URL_JCADMIN_LOGIN);
@@ -186,5 +187,19 @@ public class JCTambahAboutImpl {
 	public void admin_menekan_tombol_simpan_dan_data_tersimpan_profile() {
 		JCAbout.simpanData();
 		assertTrue(JCAbout.getValidTambah().contains("berhasil di update"));
+	}
+	
+	/*==========================*/
+	/*Berpindah Halaman*/
+	/*==========================*/
+	@When("Admin menekan tombol halaman")
+	public void admin_menekan_tombol_halaman() {
+	    admin_login_dan_membuka_halaman_about();
+	    JCAbout.pindahHalaman();
+	}
+
+	@Then("Halaman berpindah")
+	public void halaman_berpindah() {
+	    assertTrue(JCAbout.getValidPindah() != "1");
 	}
 }

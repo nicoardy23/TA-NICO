@@ -3,13 +3,16 @@ package cucumber.framework.page.jcadmin;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.time.Duration;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.framework.connection.DriverSingleton;
 import cucumber.framework.constant.Constants;
@@ -25,14 +28,21 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 		super.LoginPage("ucen1315@gmail.com", "a");
 	}
 	
+	public static String driverWaitTxt(WebDriver driver, int delays, WebElement element) {
+		return new WebDriverWait(driver, Duration.ofSeconds(delays))
+				.until(ExpectedConditions.visibilityOf(element)).getText();
+	}
+	
 	@FindBy(xpath = "//ul[@id='simple-bar']/div/div[2]/div/div/div/li[5]/a/span")
 	private WebElement btnAbout;
 	@FindBy(linkText = "Tambah")
 	private WebElement btnTambahTrainer;
 	@FindBy(name = "cari")
 	private WebElement btnCariTrainer;
-	@FindBy(linkText = "2")
+	@FindBy(linkText = "3")
 	private WebElement pindahHalaman;
+	@FindBy(css = "li[class='active page-item'] a[class='page-link']")
+	private WebElement validPindahHalaman;	
 	
 	// Tambah
 	@FindBy(name = "uploadedFile")
@@ -47,8 +57,6 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	private WebElement tambahStatusPublish;
 	@FindBy(name = "mysubmit")
 	private WebElement btnSubmit;
-//	@FindBy(xpath = "//input[@name='mysubmit']")
-//	private WebElement btnUpdate;
 	
 	// Edit
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[4]/figure[1]/a[1]/div[1]")
@@ -108,9 +116,7 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	}
 	
 	public void simpanData() {
-		Utils.fullScroll();
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+		Utils.fullScroll();;
 		Utils.delay(1, strDelay);
 		this.btnSubmit.click();
 	}
@@ -143,7 +149,6 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 		return this.ambilProfilTrainer.getText();
 	}
 	
-	
 	public void editDataTrainer() {
 		this.tekanProfilTrainer.click();
 	}
@@ -168,18 +173,25 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 		this.editProfileTrainer.sendKeys("Testing trainer baru");
 	}
 	
-//	public void updateData() {
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
-//		Utils.delay(2, strDelay);
-//		this.btnUpdate.click();
-//	}
+	public void pindahHalaman() {
+		Utils.fullScroll();
+		Utils.delay(1, strDelay);
+		this.pindahHalaman.click();
+	}
+	
+	public String getValidPindah() {
+		Utils.fullScroll();
+		return driverWaitTxt(driver, 5, validPindahHalaman);
+	}
 	
 	public void gantiStatus(String status) {
 		this.tambahStatusPublish.sendKeys(status);
 	}
 	
 	public String getValidStatus() {
-		return this.tambahStatusPublish.getText();
+		return driverWaitTxt(driver, 5, tambahStatusPublish);
 	}
+	
+    //li[class='active page-item'] a[class='page-link']
+	//div[class='page-body'] li:nth-child(1) a:nth-child(1)
 }
