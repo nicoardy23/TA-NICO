@@ -6,12 +6,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
+import cucumber.framework.connection.DriverSingleton;
+
 public class Utils {
 
+	public static WebDriver driver = DriverSingleton.getDriver();
 	public static int testCount = 0;
 	public static int countOutline = 1;
 	
@@ -36,5 +40,10 @@ public class Utils {
 				e.printStackTrace();
 			}
 		}		
+	}
+	
+	public static void fullScroll() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 	}
 }
