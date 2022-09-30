@@ -137,11 +137,16 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 		this.btnCariTrainer.sendKeys(cari);
 	}
 	
-	public void tekanEnter() throws AWTException {
+	public void tekanEnter() {
 		Utils.delay(1, strDelay);
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
+		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		} catch (Exception e) {
+			System.out.println("Next");
+		}
+		
 	}
 	
 	public String getValidCari() {

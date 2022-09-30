@@ -3,7 +3,7 @@
 
 Feature: Menambah About 
 
-	Scenario Outline: Membuka halaman about
+	Scenario: Membuka halaman about
 		Given Admin login dan membuka halaman about
 		Then Halaman about terbuka
 		

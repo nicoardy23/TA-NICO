@@ -16,4 +16,5 @@ public class Constants {
 	
 	// PAGE JC ADMIN
 		public static final String URL_JCADMIN_LOGIN="https://dev.ptdika.com/web_jc_v2/admin/login";
+		public static final String URL_JCADMIN_ABOUT="https://dev.ptdika.com/web_jc_v2/index.php/admin";
 }

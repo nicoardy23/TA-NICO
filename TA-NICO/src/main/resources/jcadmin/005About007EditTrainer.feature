@@ -3,7 +3,7 @@
 
 Feature: Mengedit Trainer
 
-	Scenario: Mengedit data trainer publish
+	Scenario Outline: Mengedit data trainer publish
   	When Admin menekan kotak profile trainer publish
   	And Admin mengganti status publish ke <status>
   	And Admin menekan tombol simpan publish
