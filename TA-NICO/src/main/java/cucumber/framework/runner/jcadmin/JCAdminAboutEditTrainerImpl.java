@@ -16,81 +16,19 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class JCAdminAboutImpl {
+public class JCAdminAboutEditTrainerImpl {
 	private static WebDriver driver;
 	private static ExtentTest extentTest;
 	private JCAdminAboutPage JCAbout;
+	private static JCAdminAboutAddTrainerImpl add;
 	String strDelay = Constants.GLOB_PARAM_DELAY;
 	
-	public JCAdminAboutImpl() {
+	public JCAdminAboutEditTrainerImpl() {
 		driver = JCAdminHooks.driver;
 		extentTest = JCAdminHooks.extentTest;
 		driver.get(Constants.URL_JCADMIN_LOGIN);
 		JCAbout = new JCAdminAboutPage();
-	}
-	
-	/*==========================*/
-	/*Test Membuka halaman About*/
-	/*==========================*/
-	@Given("Admin login dan membuka halaman about")
-	public void admin_login_dan_membuka_halaman_about() {
-		JCAbout.goToAbout();
-	}
-
-	@Then("Halaman about terbuka")
-	public void halaman_about_terbuka() {
-	    assertEquals(JCAbout.getValidAbout(), "List Trainer");
-	}
-	
-	/*====================================================*/
-	/*Test menambah data dengan status Active dan No Active*/
-	/*====================================================*/
-	@When("Admin klik tombol tambah")
-	public void admin_klik_tombol_tambah() {
-		admin_login_dan_membuka_halaman_about();
-		JCAbout.tambahTrainer();
-	}
-
-	@When("Admin mengisi data foto nama jabatan dan profile")
-	public void admin_mengisi_data_foto_nama_jabatan_dan_profile() {
-	    JCAbout.fotoTrainer("C:\\Users\\NEXSOFT\\Desktop\\Test TA\\error-wait.GIF");
-	    JCAbout.namaTrainer("Anonim23");
-	    JCAbout.jabatanTrainer("Trainer");
-	    JCAbout.profileTrainer("Cuma buat testing");
-	}
-
-	@When("^Admin memberi publish (.*)$")
-	public void admin_memberi_publish_status(String stat) {
-	    JCAbout.statusTrainer(stat);
-	}
-
-	@When("Admin menekan tombol simpan")
-	public void admin_menekan_tombol_simpan() {
-		JCAbout.simpanData();
-	}
-
-	@Then("Data trainer ditambahkan")
-	public void data_trainer_ditambahkan() {
-		assertTrue(JCAbout.getValidTambah().contains("berhasil"));
-	}
-
-	/*==========================*/
-	/*Test cari trainer*/
-	/*==========================*/
-	@When("Admin memasukkan nama trainer yang ingin dicari")
-	public void admin_memasukkan_nama_trainer_yang_ingin_dicari() {
-		admin_login_dan_membuka_halaman_about();
-	    JCAbout.cariTrainer("Anonim23");
-	}
-
-	@When("Admin menekan tombol enter pada keyboard")
-	public void admin_menekan_tombol_enter_pada_keyboard() throws AWTException {
-	    JCAbout.tekanEnter();
-	}
-
-	@Then("Admin dapat menemukan data trainer")
-	public void admin_dapat_menemukan_data_trainer() {
-	    assertTrue(JCAbout.getValidCari().contains("Anonim23"));
+		add = new JCAdminAboutAddTrainerImpl();
 	}
 	
 	/*==========================*/
@@ -98,7 +36,7 @@ public class JCAdminAboutImpl {
 	/*==========================*/
 	@When("Admin menekan kotak profile trainer publish")
 	public void admin_menekan_kotak_profile_trainer_publish() {
-	    admin_login_dan_membuka_halaman_about();
+	    add.admin_login_dan_membuka_halaman_about();
 	    JCAbout.editDataTrainer();
 	}
 
@@ -120,7 +58,7 @@ public class JCAdminAboutImpl {
 	// Edit foto
 	@When("Admin menekan kotak profile trainer foto")
 	public void admin_menekan_kotak_profile_trainer_foto() {
-		admin_login_dan_membuka_halaman_about();
+		add.admin_login_dan_membuka_halaman_about();
 	    JCAbout.editDataTrainer();
 	}
 
@@ -138,7 +76,7 @@ public class JCAdminAboutImpl {
 	// Edit nama
 	@When("Admin menekan kotak profile trainer nama")
 	public void admin_menekan_kotak_profile_trainer_nama() {
-		admin_login_dan_membuka_halaman_about();
+		add.admin_login_dan_membuka_halaman_about();
 	    JCAbout.editDataTrainer();
 	}
 
@@ -156,7 +94,7 @@ public class JCAdminAboutImpl {
 	// Edit jabatan
 	@When("Admin menekan kotak profile trainer jabatan")
 	public void admin_menekan_kotak_profile_trainer_jabatan() {
-		admin_login_dan_membuka_halaman_about();
+		add.admin_login_dan_membuka_halaman_about();
 	    JCAbout.editDataTrainer();
 	}
 
@@ -174,7 +112,7 @@ public class JCAdminAboutImpl {
 	// Edit profile
 	@When("Admin menekan kotak profile trainer profile")
 	public void admin_menekan_kotak_profile_trainer_profile() {
-		admin_login_dan_membuka_halaman_about();
+		add.admin_login_dan_membuka_halaman_about();
 	    JCAbout.editDataTrainer();
 	}
 
@@ -189,17 +127,4 @@ public class JCAdminAboutImpl {
 		assertTrue(JCAbout.getValidTambah().contains("berhasil di update"));
 	}
 	
-	/*==========================*/
-	/*Berpindah Halaman*/
-	/*==========================*/
-	@When("Admin menekan tombol halaman")
-	public void admin_menekan_tombol_halaman() {
-	    admin_login_dan_membuka_halaman_about();
-	    JCAbout.pindahHalaman();
-	}
-
-	@Then("Halaman berpindah")
-	public void halaman_berpindah() {
-	    assertTrue(JCAbout.getValidPindah() != "1");
-	}
 }
