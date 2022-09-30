@@ -42,14 +42,14 @@ public class JCAdminAboutEditTrainerImpl {
 	    extentTest.log(LogStatus.PASS, "Admin menekan kotak profile trainer publish");
 	}
 
-	@When("^Admin mengganti status publish ke (.*)$")
-	public void admin_mengganti_status_publish_ke_status(String stat) {
+	@When("^Admin mengganti status publish trainer ke (.*)$")
+	public void admin_mengganti_status_publish_trainer_ke_status(String stat) {
 	    JCAbout.gantiStatus(stat);
 	    extentTest.log(LogStatus.PASS, "Admin mengganti status publish ke " + stat);
 	}
 
-	@When("Admin menekan tombol simpan publish")
-	public void admin_menekan_tombol_simpan_publish() {
+	@When("Admin menekan tombol simpan publish trainer")
+	public void admin_menekan_tombol_simpan_publish_trainer() {
 	    JCAbout.simpanData();
 	    extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan publish");
 	}
@@ -74,11 +74,11 @@ public class JCAdminAboutEditTrainerImpl {
 		extentTest.log(LogStatus.PASS, "Admin mengubah foto trainer");
 	}
 
-	@Then("Admin menekan tombol simpan dan data tersimpan foto")
-	public void admin_menekan_tombol_simpan_dan_data_tersimpan_foto() {
+	@Then("Admin menekan tombol simpan dan data trainer tersimpan foto")
+	public void admin_menekan_tombol_simpan_dan_data_trainer_tersimpan_foto() {
 		JCAbout.simpanData();
 		assertTrue(JCAbout.getValidTambah().contains("berhasil di update"));
-		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan dan data tersimpan foto");
+		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan dan data trainer tersimpan foto");
 	}
 
 	/*------ Edit Nama ------*/
@@ -95,8 +95,8 @@ public class JCAdminAboutEditTrainerImpl {
 		extentTest.log(LogStatus.PASS, "Admin mengubah nama trainer");
 	}
 
-	@Then("Admin menekan tombol simpan dan data tersimpan nama")
-	public void admin_menekan_tombol_simpan_dan_data_tersimpan_nama() {
+	@Then("Admin menekan tombol simpan dan data trainer tersimpan nama")
+	public void admin_menekan_tombol_simpan_dan_data_trainer_tersimpan_nama() {
 		JCAbout.simpanData();
 		assertTrue(JCAbout.getValidTambah().contains("berhasil di update"));
 		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan dan data tersimpan nama");
@@ -116,8 +116,8 @@ public class JCAdminAboutEditTrainerImpl {
 		extentTest.log(LogStatus.PASS, "Admin mengubah jabatan trainer");
 	}
 
-	@Then("Admin menekan tombol simpan dan data tersimpan jabatan")
-	public void admin_menekan_tombol_simpan_dan_data_tersimpan_jabatan() {
+	@Then("Admin menekan tombol simpan dan data trainer tersimpan jabatan")
+	public void admin_menekan_tombol_simpan_dan_data_trainer_tersimpan_jabatan() {
 		JCAbout.simpanData();
 		assertTrue(JCAbout.getValidTambah().contains("berhasil di update"));
 		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan dan data tersimpan jabatan");
@@ -137,8 +137,8 @@ public class JCAdminAboutEditTrainerImpl {
 	    extentTest.log(LogStatus.PASS, "Admin mengubah profile trainer");
 	}
 
-	@Then("Admin menekan tombol simpan dan data tersimpan profile")
-	public void admin_menekan_tombol_simpan_dan_data_tersimpan_profile() {
+	@Then("Admin menekan tombol simpan dan data trainer tersimpan profile")
+	public void admin_menekan_tombol_simpan_dan_data_trainer_tersimpan_profile() {
 		JCAbout.simpanData();
 		assertTrue(JCAbout.getValidTambah().contains("berhasil di update"));
 		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan dan data tersimpan profile");

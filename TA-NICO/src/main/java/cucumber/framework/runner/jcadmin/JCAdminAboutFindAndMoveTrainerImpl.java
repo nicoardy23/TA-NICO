@@ -55,15 +55,15 @@ public class JCAdminAboutFindAndMoveTrainerImpl {
 	/*==========================*/
 	/*Berpindah Halaman*/
 	/*==========================*/
-	@When("Admin menekan tombol halaman")
-	public void admin_menekan_tombol_halaman() {
+	@When("Admin menekan tombol halaman trainer")
+	public void admin_menekan_tombol_halaman_trainer() {
 	    JCAbout.goToAbout();
 	    JCAbout.pindahHalaman();
 	    extentTest.log(LogStatus.PASS, "Admin menekan tombol halaman");
 	}
 
-	@Then("Halaman berpindah")
-	public void halaman_berpindah() {
+	@Then("Halaman trainer berpindah")
+	public void halaman_trainer_berpindah() {
 	    assertTrue(JCAbout.getValidPindah() != "1");
 	    extentTest.log(LogStatus.PASS, "Halaman berpindah");
 	}

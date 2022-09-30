@@ -165,7 +165,7 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	
 	public void editNamaTrainer() {
 		this.editNamaTrainer.clear();
-		this.editNamaTrainer.sendKeys("Anonim23");
+		this.editNamaTrainer.sendKeys("Zanonim23");
 	}
 	
 	public void editJabatanTrainer() {
@@ -177,6 +177,8 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 		this.editProfileTrainer.clear();
 		this.editProfileTrainer.sendKeys("Testing trainer baru");
 	}
+	
+	
 	
 	public void pindahHalaman() {
 		Utils.fullScroll();

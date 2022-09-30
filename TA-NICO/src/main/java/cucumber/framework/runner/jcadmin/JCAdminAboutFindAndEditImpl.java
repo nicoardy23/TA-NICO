@@ -55,8 +55,8 @@ public class JCAdminAboutFindAndEditImpl {
 		extentTest.log(LogStatus.PASS, "Admin mengubah foto trainer cari edit");
 	}
 
-	@Then("Admin menekan tombol simpan dan data tersimpan foto cari edit")
-	public void admin_menekan_tombol_simpan_dan_data_tersimpan_foto_cari_edit() {
+	@Then("Admin menekan tombol simpan dan data trainer tersimpan foto cari edit")
+	public void admin_menekan_tombol_simpan_dan_data_trainer_tersimpan_foto_cari_edit() {
 		JCAbout.simpanData();
 		assertTrue(JCAbout.getValidTambah().contains("berhasil di update"));
 		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan dan data tersimpan foto cari edit");
@@ -83,8 +83,8 @@ public class JCAdminAboutFindAndEditImpl {
 		extentTest.log(LogStatus.PASS, "Admin mengubah nama trainer cari edit");
 	}
 
-	@Then("Admin menekan tombol simpan dan data tersimpan nama cari edit")
-	public void admin_menekan_tombol_simpan_dan_data_tersimpan_nama_cari_edit() {
+	@Then("Admin menekan tombol simpan dan data trainer tersimpan nama cari edit")
+	public void admin_menekan_tombol_simpan_dan_data_trainer_tersimpan_nama_cari_edit() {
 		JCAbout.simpanData();
 		assertTrue(JCAbout.getValidTambah().contains("berhasil di update"));
 		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan dan data tersimpan nama cari edit");
@@ -111,8 +111,8 @@ public class JCAdminAboutFindAndEditImpl {
 		extentTest.log(LogStatus.PASS, "Admin mengubah jabatan trainer cari edit");
 	}
 
-	@Then("Admin menekan tombol simpan dan data tersimpan jabatan cari edit")
-	public void admin_menekan_tombol_simpan_dan_data_tersimpan_jabatan_cari_edit() {
+	@Then("Admin menekan tombol simpan dan data trainer tersimpan jabatan cari edit")
+	public void admin_menekan_tombol_simpan_dan_data_trainer_tersimpan_jabatan_cari_edit() {
 		JCAbout.simpanData();
 		assertTrue(JCAbout.getValidTambah().contains("berhasil di update"));
 		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan dan data tersimpan jabatan cari edit");
@@ -139,10 +139,40 @@ public class JCAdminAboutFindAndEditImpl {
 		extentTest.log(LogStatus.PASS, "Admin mengubah profile trainer cari edit");
 	}
 
-	@Then("Admin menekan tombol simpan dan data tersimpan profile cari edit")
-	public void admin_menekan_tombol_simpan_dan_data_tersimpan_profile_cari_edit() {
+	@Then("Admin menekan tombol simpan dan data trainer tersimpan profile cari edit")
+	public void admin_menekan_tombol_simpan_dan_data_trainer_tersimpan_profile_cari_edit() {
 		JCAbout.simpanData();
 		assertTrue(JCAbout.getValidTambah().contains("berhasil di update"));
 		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan dan data tersimpan profile cari edit");
 	}
+	
+	/*------ Edit Publish ------*/
+	@When("Admin menekan kotak profile trainer publish cari edit")
+	public void admin_menekan_kotak_profile_trainer_publish_cari_edit() {
+		JCAbout.goToAbout();
+	    JCAbout.cariTrainer("Zanonim23");
+	    JCAbout.tekanEnter();
+	    JCAbout.editDataTrainer();
+	    extentTest.log(LogStatus.PASS, "Admin menekan kotak profile trainer publish cari edit");
+	}
+
+	@When("^Admin mengganti status publish trainer cari edit ke (.*)$")
+	public void admin_mengganti_status_publish_trainer_cari_edit_ke_status(String stat) {
+		JCAbout.statusTrainer(stat);
+	    extentTest.log(LogStatus.PASS, "Admin mengganti status publish cari edit ke " + stat);
+	}
+
+	@When("Admin menekan tombol simpan publish trainer cari edit")
+	public void admin_menekan_tombol_simpan_publish_trainer_cari_edit() {
+		JCAbout.simpanData();
+		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan publish cari edit");
+	}
+
+	@Then("^Status publish cari edit trainer berubah menjadi (.*)$")
+	public void status_publish_cari_edit_trainer_berubah_menjadi_status(String stat) {
+		assertTrue(JCAbout.getValidTambah().contains("berhasil di update"));
+		extentTest.log(LogStatus.PASS, "Status publish edit cari trainer berubah menjadi " + stat);
+	}
+	
+
 }

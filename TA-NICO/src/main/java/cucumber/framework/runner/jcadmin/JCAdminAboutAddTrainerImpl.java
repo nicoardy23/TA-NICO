@@ -48,17 +48,17 @@ public class JCAdminAboutAddTrainerImpl {
 	/*====================================================*/
 	/*Test menambah data dengan status Active dan No Active*/
 	/*====================================================*/
-	@When("Admin klik tombol tambah")
-	public void admin_klik_tombol_tambah() {
+	@When("Admin klik tombol tambah trainer")
+	public void admin_klik_tombol_tambah_trainer() {
 		JCAbout.goToAbout();
 		JCAbout.tambahTrainer();
 		extentTest.log(LogStatus.PASS, "Admin klik tombol tambah");
 	}
 
-	@When("Admin mengisi data foto nama jabatan dan profile")
-	public void admin_mengisi_data_foto_nama_jabatan_dan_profile() {
+	@When("Admin mengisi data foto nama jabatan dan profile trainer")
+	public void admin_mengisi_data_foto_nama_jabatan_dan_profile_trainer() {
 	    JCAbout.fotoTrainer("C:\\Users\\NEXSOFT\\Desktop\\Test TA\\error-wait.GIF");
-	    JCAbout.namaTrainer("Anonim23");
+	    JCAbout.namaTrainer("Zanonim23");
 	    JCAbout.jabatanTrainer("Trainer");
 	    JCAbout.profileTrainer("Cuma buat testing");
 	    extentTest.log(LogStatus.PASS, "Admin mengisi data foto nama jabatan dan profile");
@@ -70,8 +70,8 @@ public class JCAdminAboutAddTrainerImpl {
 	    extentTest.log(LogStatus.PASS, "Admin memberi publish " + stat);
 	}
 
-	@When("Admin menekan tombol simpan")
-	public void admin_menekan_tombol_simpan() {
+	@When("Admin menekan tombol simpan trainer")
+	public void admin_menekan_tombol_simpan_trainer() {
 		JCAbout.simpanData();
 		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan");
 	}

@@ -10,10 +10,11 @@ public enum JCAdminTesting {
 	N009("Mengubah nama trainer"),
 	N010("Mengubah jabatan trainer"),
 	N011("Mengubah profile trainer"),
-	N012("Mengubah foto trainer edit cari"),
-	N013("Mengubah nama trainer edit cari"),
-	N014("Mengubah jabatan trainer edit cari"),
-	N015("Mengubah profile trainer edit cari"),
+	N012("Negative : Mengubah foto trainer edit cari"),
+	N013("Negative : Mengubah nama trainer edit cari"),
+	N014("Negative : Mengubah jabatan trainer edit cari"),
+	N015("Negative : Mengubah profile trainer edit cari"),
+	N016("Negative : Mengedit data trainer publish edit cari")
 	;
 	
 	private String testName;
