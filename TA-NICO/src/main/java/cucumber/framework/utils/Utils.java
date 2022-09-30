@@ -50,23 +50,31 @@ public class Utils {
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 	}
 	
-	public static void zoomOut(int nilai) throws AWTException {
-		Robot rob = new Robot();
-		for (int i = 0; i < nilai; i++) {
-			rob.keyPress(KeyEvent.VK_CONTROL);
-			rob.keyPress(KeyEvent.VK_SUBTRACT);
-			rob.keyRelease(KeyEvent.VK_SUBTRACT);
-			rob.keyRelease(KeyEvent.VK_CONTROL);
+	public static void zoomOut(int nilai) {
+		try {
+			Robot rob = new Robot();
+			for (int i = 0; i < nilai; i++) {
+				rob.keyPress(KeyEvent.VK_CONTROL);
+				rob.keyPress(KeyEvent.VK_SUBTRACT);
+				rob.keyRelease(KeyEvent.VK_SUBTRACT);
+				rob.keyRelease(KeyEvent.VK_CONTROL);
+			}
+		} catch (Exception e) {
+			System.out.println("ERROR : zoomOut method");
 		}
 	}
 	
-	public static void zoomIn(int nilai) throws AWTException {
-		Robot rob = new Robot();
-		for (int i = 0; i < nilai; i++) {
-			rob.keyPress(KeyEvent.VK_CONTROL);
-			rob.keyPress(KeyEvent.VK_ADD);
-			rob.keyRelease(KeyEvent.VK_ADD);
-			rob.keyRelease(KeyEvent.VK_CONTROL);
+	public static void zoomIn(int nilai) {
+		try {
+			Robot rob = new Robot();
+			for (int i = 0; i < nilai; i++) {
+				rob.keyPress(KeyEvent.VK_CONTROL);
+				rob.keyPress(KeyEvent.VK_ADD);
+				rob.keyRelease(KeyEvent.VK_ADD);
+				rob.keyRelease(KeyEvent.VK_CONTROL);
+			}
+		} catch (Exception e) {
+			System.out.println("ERROR : zoomIn Method");
 		}
 	}
 }
