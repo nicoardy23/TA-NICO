@@ -1,5 +1,8 @@
 package cucumber.framework.utils;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -45,5 +48,25 @@ public class Utils {
 	public static void fullScroll() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+	}
+	
+	public static void zoomOut(int nilai) throws AWTException {
+		Robot rob = new Robot();
+		for (int i = 0; i < nilai; i++) {
+			rob.keyPress(KeyEvent.VK_CONTROL);
+			rob.keyPress(KeyEvent.VK_SUBTRACT);
+			rob.keyRelease(KeyEvent.VK_SUBTRACT);
+			rob.keyRelease(KeyEvent.VK_CONTROL);
+		}
+	}
+	
+	public static void zoomIn(int nilai) throws AWTException {
+		Robot rob = new Robot();
+		for (int i = 0; i < nilai; i++) {
+			rob.keyPress(KeyEvent.VK_CONTROL);
+			rob.keyPress(KeyEvent.VK_ADD);
+			rob.keyRelease(KeyEvent.VK_ADD);
+			rob.keyRelease(KeyEvent.VK_CONTROL);
+		}
 	}
 }
