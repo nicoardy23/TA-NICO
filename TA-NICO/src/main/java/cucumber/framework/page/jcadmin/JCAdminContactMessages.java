@@ -25,4 +25,76 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 		return new WebDriverWait(driver, Duration.ofSeconds(delays))
 				.until(ExpectedConditions.visibilityOf(element)).getText();
 	}
+	
+	/*----- Main -----*/
+	
+//	driver.get("https://dev.ptdika.com/web_jc_v2/index.php/admin");
+//    driver.findElement(By.linkText("Contact Messages")).click();
+//    driver.get("https://dev.ptdika.com/web_jc_v2/admin/contact");
+//    driver.findElement(By.name("st")).click();
+//    new Select(driver.findElement(By.name("st"))).selectByVisibleText("Email");
+//    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td[2]")).click();
+//    driver.findElement(By.name("st")).click();
+//    new Select(driver.findElement(By.name("st"))).selectByVisibleText("Phone Number");
+//    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td[3]")).click();
+//    driver.findElement(By.name("st")).click();
+//    new Select(driver.findElement(By.name("st"))).selectByVisibleText("Nama");
+//    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td")).click();
+//    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr[4]/td")).click();
+//    driver.findElement(By.name("st")).click();
+//    new Select(driver.findElement(By.name("st"))).selectByVisibleText("Subject");
+//    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td[4]")).click();
+//    driver.findElement(By.name("st")).click();
+//    new Select(driver.findElement(By.name("st"))).selectByVisibleText("Message");
+//    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td[5]")).click();
+//    driver.findElement(By.name("st")).click();
+//    new Select(driver.findElement(By.name("st"))).selectByVisibleText("Nama");
+//    driver.findElement(By.name("cari")).click();
+//    driver.findElement(By.name("cari")).clear();
+//    driver.findElement(By.name("cari")).sendKeys("Zanonim");
+//    driver.findElement(By.name("frmTest")).submit();
+//    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td")).click();
+//    driver.findElement(By.name("st")).click();
+//    new Select(driver.findElement(By.name("st"))).selectByVisibleText("Email");
+//    driver.findElement(By.name("cari")).click();
+//    driver.findElement(By.name("cari")).clear();
+//    driver.findElement(By.name("cari")).sendKeys("zanonim@gmail.com");
+//    driver.findElement(By.name("frmTest")).submit();
+//    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td[2]")).click();
+//    driver.findElement(By.name("st")).click();
+//    new Select(driver.findElement(By.name("st"))).selectByVisibleText("Phone Number");
+//    driver.findElement(By.name("cari")).click();
+//    driver.findElement(By.name("cari")).clear();
+//    driver.findElement(By.name("cari")).sendKeys("087087087");
+//    driver.findElement(By.name("frmTest")).submit();
+//    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div")).click();
+//    driver.findElement(By.name("st")).click();
+//    new Select(driver.findElement(By.name("st"))).selectByVisibleText("Phone Number");
+//    driver.findElement(By.name("cari")).click();
+//    driver.findElement(By.name("cari")).clear();
+//    driver.findElement(By.name("cari")).sendKeys("87087087");
+//    driver.findElement(By.name("frmTest")).submit();
+//    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td[3]")).click();
+//    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td")).click();
+//    driver.findElement(By.name("cari")).click();
+//    driver.findElement(By.name("frmTest")).submit();
+//    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/form/div/div[4]")).click();
+//    driver.findElement(By.name("cari")).clear();
+//    driver.findElement(By.name("cari")).sendKeys("");
+//    driver.findElement(By.name("st")).click();
+//    driver.findElement(By.name("st")).click();
+//    new Select(driver.findElement(By.name("st"))).selectByVisibleText("Subject");
+//    driver.findElement(By.name("cari")).click();
+//    driver.findElement(By.name("cari")).clear();
+//    driver.findElement(By.name("cari")).sendKeys("zanonim");
+//    driver.findElement(By.name("frmTest")).submit();
+//    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td[4]")).click();
+//    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td")).click();
+//    driver.findElement(By.name("st")).click();
+//    new Select(driver.findElement(By.name("st"))).selectByVisibleText("Message");
+//    driver.findElement(By.name("cari")).click();
+//    driver.findElement(By.name("cari")).clear();
+//    driver.findElement(By.name("cari")).sendKeys("blablabla");
+//    driver.findElement(By.name("frmTest")).submit();
+//    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div")).click();
 }

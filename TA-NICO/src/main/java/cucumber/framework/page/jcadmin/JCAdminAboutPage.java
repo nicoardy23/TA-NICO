@@ -33,6 +33,7 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 				.until(ExpectedConditions.visibilityOf(element)).getText();
 	}
 	
+	/*----- Main -----*/
 	@FindBy(xpath = "//ul[@id='simple-bar']/div/div[2]/div/div/div/li[5]/a/span")
 	private WebElement btnAbout;
 	@FindBy(linkText = "Tambah")
@@ -44,7 +45,7 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	@FindBy(css = "li[class='active page-item'] a[class='page-link']")
 	private WebElement validPindahHalaman;	
 	
-	// Tambah
+	/*----- Tambah -----*/
 	@FindBy(name = "uploadedFile")
 	private WebElement tambahFotoTrainer;
 	@FindBy(name = "nama_trainer")
@@ -58,7 +59,7 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	@FindBy(name = "mysubmit")
 	private WebElement btnSubmit;
 	
-	// Edit
+	/*----- Edit -----*/
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[4]/figure[1]/a[1]/div[1]")
 	private WebElement ambilProfilTrainer;
 	@FindBy(xpath = "//figure[1]//a[1]//img[1]")
@@ -72,7 +73,7 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	@FindBy(xpath = "//textarea[@name='isi_profil']")
 	private WebElement editProfileTrainer;
 
-	// Validasi	
+	/*----- Validasi -----*/
 	@FindBy(xpath = "//h3[normalize-space()='List Trainer']")
 	private WebElement validAbout;
 	@FindBy(xpath = "//alert[@class='alert alert-success']")

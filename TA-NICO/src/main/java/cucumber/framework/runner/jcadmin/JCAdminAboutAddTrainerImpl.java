@@ -33,52 +33,87 @@ public class JCAdminAboutAddTrainerImpl {
 	/*==========================*/
 	/*Test Membuka halaman About*/
 	/*==========================*/
-	@Given("Admin login dan membuka halaman about")
+	@Given("AB001P Admin login dan membuka halaman about")
 	public void admin_login_dan_membuka_halaman_about() {
 		JCAbout.goToAbout();
-		extentTest.log(LogStatus.PASS, "Admin login dan membuka halaman about");
+		extentTest.log(LogStatus.PASS, "AB001P Admin login dan membuka halaman about");
 	}
 
-	@Then("Halaman about terbuka")
+	@Then("AB001P Halaman about terbuka")
 	public void halaman_about_terbuka() {
 	    assertEquals(JCAbout.getValidAbout(), "List Trainer");
-	    extentTest.log(LogStatus.PASS, "Halaman about terbuka");
+	    extentTest.log(LogStatus.PASS, "AB001P Halaman about terbuka");
 	}
 	
 	/*====================================================*/
 	/*Test menambah data dengan status Active dan No Active*/
 	/*====================================================*/
-	@When("Admin klik tombol tambah trainer")
-	public void admin_klik_tombol_tambah_trainer() {
+	@When("^(.*) Admin klik tombol tambah trainer$")
+	public void kode_admin_klik_tombol_tambah_trainer(String kode) {
 		JCAbout.goToAbout();
 		JCAbout.tambahTrainer();
-		extentTest.log(LogStatus.PASS, "Admin klik tombol tambah");
+		extentTest.log(LogStatus.PASS, kode + " Admin klik tombol tambah");
 	}
 
-	@When("Admin mengisi data foto nama jabatan dan profile trainer")
-	public void admin_mengisi_data_foto_nama_jabatan_dan_profile_trainer() {
-	    JCAbout.fotoTrainer("C:\\Users\\NEXSOFT\\Desktop\\Test TA\\error-wait.GIF");
+	@When("^(.*) Admin mengisi data foto nama jabatan dan profile trainer$")
+	public void kode_admin_mengisi_data_foto_nama_jabatan_dan_profile_trainer(String kode) {
+		JCAbout.fotoTrainer("C:\\Users\\NEXSOFT\\Desktop\\Test TA\\error-wait.GIF");
 	    JCAbout.namaTrainer("Zanonim23");
 	    JCAbout.jabatanTrainer("Trainer");
 	    JCAbout.profileTrainer("Cuma buat testing");
-	    extentTest.log(LogStatus.PASS, "Admin mengisi data foto nama jabatan dan profile");
+	    extentTest.log(LogStatus.PASS, kode + " Admin mengisi data foto nama jabatan dan profile");
 	}
 
-	@When("^Admin memberi publish (.*)$")
-	public void admin_memberi_publish_status(String stat) {
-	    JCAbout.statusTrainer(stat);
-	    extentTest.log(LogStatus.PASS, "Admin memberi publish " + stat);
+	@When("^(.*) Admin memberi publish (.*)$")
+	public void kode_admin_memberi_publish_status(String kode, String stat) {
+		JCAbout.statusTrainer(stat);
+	    extentTest.log(LogStatus.PASS, kode + " Admin memberi publish " + stat);
 	}
 
-	@When("Admin menekan tombol simpan trainer")
-	public void admin_menekan_tombol_simpan_trainer() {
+	@When("^(.*) Admin menekan tombol simpan trainer$")
+	public void kode_admin_menekan_tombol_simpan_trainer(String kode) {
 		JCAbout.simpanData();
-		extentTest.log(LogStatus.PASS, "Admin menekan tombol simpan");
+		extentTest.log(LogStatus.PASS, kode + " Admin menekan tombol simpan");
 	}
 
-	@Then("Data trainer ditambahkan")
-	public void data_trainer_ditambahkan() {
+	@Then("^(.*) Data trainer ditambahkan$")
+	public void kode_data_trainer_ditambahkan(String kode) {
 		assertTrue(JCAbout.getValidTambah().contains("berhasil"));
-		extentTest.log(LogStatus.PASS, "Data trainer ditambahkan");
+		extentTest.log(LogStatus.PASS, kode + " Data trainer ditambahkan");
 	}
+	
+	
+//	@When("(.*) Admin klik tombol tambah trainer")
+//	public void kode_admin_klik_tombol_tambah_trainer(String kode) {
+//		JCAbout.goToAbout();
+//		JCAbout.tambahTrainer();
+//		extentTest.log(LogStatus.PASS, kode + " Admin klik tombol tambah");
+//	}
+
+//	@When("(.*) Admin mengisi data foto nama jabatan dan profile trainer")
+//	public void kode_admin_mengisi_data_foto_nama_jabatan_dan_profile_trainer(String kode) {
+//	    JCAbout.fotoTrainer("C:\\Users\\NEXSOFT\\Desktop\\Test TA\\error-wait.GIF");
+//	    JCAbout.namaTrainer("Zanonim23");
+//	    JCAbout.jabatanTrainer("Trainer");
+//	    JCAbout.profileTrainer("Cuma buat testing");
+//	    extentTest.log(LogStatus.PASS, kode + " Admin mengisi data foto nama jabatan dan profile");
+//	}
+
+//	@When("^(.*) Admin memberi publish (.*)$")
+//	public void kode_admin_memberi_publish_status(String kode, String stat) {
+//	    JCAbout.statusTrainer(stat);
+//	    extentTest.log(LogStatus.PASS, kode + " Admin memberi publish " + stat);
+//	}
+
+//	@When("(.*) Admin menekan tombol simpan trainer")
+//	public void kode_admin_menekan_tombol_simpan_trainer(String kode) {
+//		JCAbout.simpanData();
+//		extentTest.log(LogStatus.PASS, kode + " Admin menekan tombol simpan");
+//	}
+
+//	@Then("(.*) Data trainer ditambahkan")
+//	public void kode_data_trainer_ditambahkan(String kode) {
+//		assertTrue(JCAbout.getValidTambah().contains("berhasil"));
+//		extentTest.log(LogStatus.PASS, kode + " Data trainer ditambahkan");
+//	}
 }
