@@ -3,18 +3,19 @@ package cucumber.framework.scenariotest.jcadmin.total;
 public enum JCAdminTesting {
 	N001("Membuka halaman about"),
 	N002("Menambah daftar trainer"),
-	N004("Mencari data trainer"),
-	N005("Berpindah halaman list trainer"),
-	N006("Mengedit data trainer publish"),
-	N008("Mengubah foto trainer"),
-	N009("Mengubah nama trainer"),
-	N010("Mengubah jabatan trainer"),
-	N011("Mengubah profile trainer"),
-	N012("Negative : Mengubah foto trainer edit cari"),
-	N013("Negative : Mengubah nama trainer edit cari"),
-	N014("Negative : Mengubah jabatan trainer edit cari"),
-	N015("Negative : Mengubah profile trainer edit cari"),
-	N016("Negative : Mengedit data trainer publish edit cari")
+	N004("Menambah daftar trainer dengan banyak ekstensi gambar"),
+	N012("Mencari data trainer"),
+	N013("Berpindah halaman list trainer"),
+	N014("Mengedit data trainer publish"),
+	N016("Mengubah foto trainer"),
+	N017("Mengubah nama trainer"),
+	N018("Mengubah jabatan trainer"),
+	N019("Mengubah profile trainer"),
+	N020("Negative : Mengubah foto trainer edit cari"),
+	N021("Negative : Mengubah nama trainer edit cari"),
+	N022("Negative : Mengubah jabatan trainer edit cari"),
+	N023("Negative : Mengubah profile trainer edit cari"),
+	N034("Negative : Mengedit data trainer publish edit cari")
 	;
 	
 	private String testName;

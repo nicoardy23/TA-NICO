@@ -3,6 +3,7 @@ package cucumber.framework.page.jcadmin;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.time.Duration;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -38,7 +39,7 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	private WebElement btnAbout;
 	@FindBy(linkText = "Tambah")
 	private WebElement btnTambahTrainer;
-	@FindBy(name = "cari")
+	@FindBy(xpath = "//input[@placeholder='Search Nama Peserta']")
 	private WebElement btnCariTrainer;
 	@FindBy(linkText = "3")
 	private WebElement pindahHalaman;
@@ -95,6 +96,13 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 		this.tambahFotoTrainer.sendKeys(foto);
 	}
 	
+	public void fotoTrainerOutline(String foto) {
+		Utils.delay(1, strDelay);
+		this.tambahFotoTrainer.click();
+		File upFile = new File(foto);
+		Utils.uploadFoto(upFile);
+	}
+	
 	public void namaTrainer(String nama) {
 		Utils.delay(1, strDelay);
 		this.tambahNamaTrainer.sendKeys(nama);
@@ -134,6 +142,9 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	
 	
 	public void cariTrainer(String cari) {
+		Utils.zoomOut(3);
+		Utils.delay(1, strDelay);
+		this.btnCariTrainer.click();
 		Utils.delay(1, strDelay);
 		this.btnCariTrainer.sendKeys(cari);
 	}

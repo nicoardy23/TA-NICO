@@ -2,6 +2,8 @@ package cucumber.framework.utils;
 
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
@@ -75,6 +77,33 @@ public class Utils {
 			}
 		} catch (Exception e) {
 			System.out.println("ERROR : zoomIn Method");
+		}
+	}
+	
+	public static void uploadFoto(File foto) {
+		try {
+			// creating object of Robot class
+			Robot rb = new Robot();
+			String absFoto = foto.getAbsolutePath();
+			
+			// copying File path to Clipboard
+			StringSelection str = new StringSelection(absFoto);
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+			
+			// press Contol+V for pasting
+			rb.keyPress(KeyEvent.VK_CONTROL);
+			rb.keyPress(KeyEvent.VK_V);
+			
+			// release Contol+V for pasting
+			rb.keyRelease(KeyEvent.VK_CONTROL);
+			rb.keyRelease(KeyEvent.VK_V);
+			
+			// for pressing and releasing Enter
+			rb.keyPress(KeyEvent.VK_ENTER);
+			rb.keyRelease(KeyEvent.VK_ENTER);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Next");
 		}
 	}
 }

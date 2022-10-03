@@ -36,20 +36,20 @@ public class JCAdminAboutFindAndMoveTrainerImpl {
 	@When("AB012P Admin memasukkan nama trainer yang ingin dicari")
 	public void ab012p_admin_memasukkan_nama_trainer_yang_ingin_dicari() {
 		JCAbout.goToAbout();
-	    JCAbout.cariTrainer("Anonim23");
-	    extentTest.log(LogStatus.PASS, "AB004P Admin memasukkan nama trainer yang ingin dicari");
+	    JCAbout.cariTrainer("Zanonim23");
+	    extentTest.log(LogStatus.PASS, "AB012P Admin memasukkan nama trainer yang ingin dicari");
 	}
 
 	@When("AB012P Admin menekan tombol enter pada keyboard")
 	public void ab012p_admin_menekan_tombol_enter_pada_keyboard() {
 	    JCAbout.tekanEnter();
-	    extentTest.log(LogStatus.PASS, "AB004P Admin menekan tombol enter pada keyboard");
+	    extentTest.log(LogStatus.PASS, "AB012P Admin menekan tombol enter pada keyboard");
 	}
 
 	@Then("AB012P Admin dapat menemukan data trainer")
 	public void ab012p_admin_dapat_menemukan_data_trainer() {
-	    assertTrue(JCAbout.getValidCari().contains("Anonim23"));
-	    extentTest.log(LogStatus.PASS, "AB004P Admin dapat menemukan data trainer");
+	    assertTrue(JCAbout.getValidCari().contains("nonim23"));
+	    extentTest.log(LogStatus.PASS, "AB012P Admin dapat menemukan data trainer");
 	}
 	
 	/*==========================*/
@@ -59,12 +59,12 @@ public class JCAdminAboutFindAndMoveTrainerImpl {
 	public void ab013p_admin_menekan_tombol_halaman_trainer() {
 	    JCAbout.goToAbout();
 	    JCAbout.pindahHalaman();
-	    extentTest.log(LogStatus.PASS, "AB005P Admin menekan tombol halaman");
+	    extentTest.log(LogStatus.PASS, "AB013P Admin menekan tombol halaman");
 	}
 
 	@Then("AB013P Halaman trainer berpindah")
 	public void ab013p_halaman_trainer_berpindah() {
 	    assertTrue(JCAbout.getValidPindah() != "1");
-	    extentTest.log(LogStatus.PASS, "AB005P Halaman berpindah");
+	    extentTest.log(LogStatus.PASS, "AB013P Halaman berpindah");
 	}
 }
