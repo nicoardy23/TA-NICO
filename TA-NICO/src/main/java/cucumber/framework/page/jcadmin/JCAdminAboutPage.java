@@ -79,6 +79,14 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	private WebElement validAbout;
 	@FindBy(xpath = "//alert[@class='alert alert-success']")
 	private WebElement validTambah;
+	@FindBy(xpath = "//div[@class='alert alert-danger mt-2']")
+	private WebElement invalidInput;
+	@FindBy(xpath = "//p[contains(text(),'NicoArdyTestPanjangggggggggggggggggggggggggggggggg')]")
+	private WebElement validNamaLength;
+	@FindBy(xpath = "//figure[1]//a[1]//div[1]//p[3]")
+	private WebElement validJabatanLength;
+	@FindBy(xpath = "//p[contains(text(),'NicoArdyTestProfilePanjanggggggggggggggggggggggggg')]")
+	private WebElement validProfileLength;
 	
 
 	public void goToAbout() {
@@ -142,7 +150,6 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	
 	
 	public void cariTrainer(String cari) {
-		Utils.zoomOut(3);
 		Utils.delay(1, strDelay);
 		this.btnCariTrainer.click();
 		Utils.delay(1, strDelay);
@@ -158,7 +165,6 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 		} catch (Exception e) {
 			System.out.println("Next");
 		}
-		
 	}
 	
 	public String getValidCari() {
@@ -209,6 +215,22 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	
 	public String getValidStatus() {
 		return driverWaitTxt(driver, 5, tambahStatusPublish);
+	}
+	
+	public String getInvalidInput() {
+		return driverWaitTxt(driver, 3, invalidInput);
+	}
+	
+	public String getValidNamaTrainerLength() {
+		return driverWaitTxt(driver, 3, validNamaLength);
+	}
+	
+	public String getValidJabatanTrainerLength() {
+		return driverWaitTxt(driver, 3, validJabatanLength);
+	}
+	
+	public String getValidProfileTrainerLength() {
+		return driverWaitTxt(driver, 3, validProfileLength);
 	}
 	
     //li[class='active page-item'] a[class='page-link']

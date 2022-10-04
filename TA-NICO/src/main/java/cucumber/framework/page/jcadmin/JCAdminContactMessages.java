@@ -1,15 +1,20 @@
 package cucumber.framework.page.jcadmin;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.framework.connection.DriverSingleton;
 import cucumber.framework.constant.Constants;
+import cucumber.framework.utils.Utils;
 
 public class JCAdminContactMessages extends JCAdminLoginPage{
 	private WebDriver driver;
@@ -27,10 +32,80 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 	}
 	
 	/*----- Main -----*/
+	@FindBy(linkText = "Contact Messages")
+	private WebElement btnAbout;
+	@FindBy(name = "st")
+	private WebElement sortSelect;
+	@FindBy(name = "cari")
+	private WebElement search;
+	@FindBy(xpath = "//div[@class='faq-form']//*[name()='svg']")
+	private WebElement btnSearch;
 	
-//	driver.get("https://dev.ptdika.com/web_jc_v2/index.php/admin");
-//    driver.findElement(By.linkText("Contact Messages")).click();
-//    driver.get("https://dev.ptdika.com/web_jc_v2/admin/contact");
+	/*----- Validasi -----*/
+	@FindBy(xpath = "//h3[normalize-space()='Data Contact Messages']")
+	private WebElement validContactMessages;
+	@FindBy(xpath = "//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td")
+	private WebElement validNama;
+	@FindBy(xpath = "//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td[2]")
+	private WebElement validEmail;
+	@FindBy(xpath = "//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td[3]")
+	private WebElement validPhoneNumber;
+	@FindBy(xpath = "//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td[4]")
+	private WebElement validSubject;
+	@FindBy(xpath = "//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td[5]")
+	private WebElement validMessage;
+	
+	public void goToContactMessages() {
+		Utils.delay(2, strDelay);
+		this.btnAbout.click();
+	}
+	
+	public void sortSelection(String select) {
+		Utils.delay(1, strDelay);
+		Select selc = new Select(this.sortSelect);
+		selc.selectByVisibleText(select);
+	}
+	
+	public void tekanEnter() {
+		Utils.delay(1, strDelay);
+		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		} catch (Exception e) {
+			System.out.println("Next");
+		}
+	}
+	
+	public void searchData(String data) {
+		Utils.delay(1, strDelay);
+		this.search.sendKeys(data);
+	}
+	
+	public String getValidCoMes() {
+		return driverWaitTxt(driver, 3, validContactMessages);
+	}
+	
+	public String getValidNama() {
+		return driverWaitTxt(driver, 3, validNama);
+	}
+	
+	public String getValidEmail() {
+		return driverWaitTxt(driver, 3, validEmail);
+	}
+	
+	public String getValidPhoneNumber() {
+		return driverWaitTxt(driver, 3, validPhoneNumber);
+	}
+	
+	public String getValidSubject() {
+		return driverWaitTxt(driver, 3, validSubject);
+	}
+	
+	public String getValidMessage() {
+		return driverWaitTxt(driver, 3, validMessage);
+	}
+	
 //    driver.findElement(By.name("st")).click();
 //    new Select(driver.findElement(By.name("st"))).selectByVisibleText("Email");
 //    driver.findElement(By.xpath("//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td[2]")).click();
