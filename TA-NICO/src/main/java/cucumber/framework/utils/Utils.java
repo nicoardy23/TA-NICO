@@ -52,6 +52,11 @@ public class Utils {
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 	}
 	
+	public static void littleScroll() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,200)","");
+	}
+	
 	public static void zoomOut(int nilai) {
 		try {
 			Robot rob = new Robot();

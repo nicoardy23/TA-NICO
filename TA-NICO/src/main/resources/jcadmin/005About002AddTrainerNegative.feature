@@ -3,6 +3,18 @@
 
 Feature: Menambah About Negative
 
+	Scenario: Tambah trainer negative masukkan foto dengan <eks>
+		When <kode> Admin klik tombol tambah trainer foto selain ekstensi gambar
+  	And <kode> Admin memasukkan <foto> trainer selain ekstensi gambar
+  	And <kode> Admin mengisi nama jabatan profile dan publish no active trainer selain ekstensi gambar
+  	Then <kode> Admin menekan tombol simpan trainer foto selain ekstensi gambar
+  
+   Examples:
+   |kode|eks|foto|
+   |AB001N|mp4|.\\src\\main\\resources\\gambarnico\\testFotoInvalid.mp4|
+   |AB002N|pdf|.\\src\\main\\resources\\gambarnico\\testFotoInvalid.pdf|
+   |AB003N|mp3|.\\src\\main\\resources\\gambarnico\\testFotoInvalid.mp3|
+  
 	Scenario: Tambah trainer negative invalid input nama
 		When AB004N Admin klik tombol tambah trainer invalid input nama
   	And AB004N Admin memasukkan foto trainer invalid input nama
@@ -43,5 +55,5 @@ Feature: Menambah About Negative
   	And AB009N Admin memasukkan foto nama dan jabatan trainer input profile500 karakter
    	And AB009N Admin mengisi profile trainer dengan input profile500 karakter
   	And AB009N Admin memilih publish no active trainer input profile500 karakter
-  #	Then AB009N Admin menekan tombol simpan dan cari trainer input profile500 karakter
+  	Then AB009N Admin menekan tombol simpan dan cari trainer input profile500 karakter
   

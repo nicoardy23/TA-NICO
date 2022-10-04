@@ -19,21 +19,20 @@ Feature: Menambah About
    	|Active|AB002P|
    	|No Active|AB003P|
   
-  #On Progress#
-  #Scenario Outline: Menambah daftar trainer dengan banyak ekstensi gambar
-  #	When <kode> Admin klik tombol tambah trainer berbagai foto
-  #	And <kode> Admin memasukkan file <foto> trainer
-  #	And <kode> Admin mengisi data trainer dengan status status no active
-  #	And <kode> Admin menekan tombol simpan trainer berbagai foto
-  #	Then <kode> Data trainer ditambahkan berbagai gambar
-  #	
-   #Examples:
-   #		|kode|foto|
-   #		|AB004P|src\main\resources\gambarnico\maung.jpg|
-   #		|AB005P|src\main\resources\gambarnico\mnk.png|
-   #		|AB006P|src\main\resources\gambarnico\maung_1664337134914.raw|
-   #		|AB007P|src\main\resources\gambarnico\error-wait.gif|
-   #		|AB008P|src\main\resources\gambarnico\maung_1664337283539.bmp|
-   #		|AB009P|src\main\resources\gambarnico\maung.webp|
-   #		|AB010P|src\main\resources\gambarnico\maung_1.tiff|
-   #		|AB011P|src\main\resources\gambarnico\maung.psd|
+  Scenario Outline: Menambah daftar trainer dengan banyak ekstensi gambar <eks>
+  	When <kode> Admin klik tombol tambah trainer berbagai foto
+  	And <kode> Admin memasukkan file <foto> trainer
+  	And <kode> Admin mengisi data trainer dengan status status no active
+  	And <kode> Admin menekan tombol simpan trainer berbagai foto
+  	Then <kode> Data trainer ditambahkan berbagai gambar
+  	
+   Examples:
+   		|kode|foto|eks|
+   		|AB004P|.\\src\\main\\resources\\gambarnico\\maung.jpg|JPG|
+   		|AB005P|.\\src\\main\\resources\\gambarnico\\mnk.png|PNG|
+   		|AB006P|.\\src\\main\\resources\\gambarnico\\maung_1664337134914.raw|RAW|
+   		|AB007P|.\\src\\main\\resources\\gambarnico\\error-wait.gif|GIF|
+   		|AB008P|.\\src\\main\\resources\\gambarnico\\maung_1664337283539.bmp|BMP|
+   		|AB009P|.\\src\\main\\resources\\gambarnico\\maung.webp|WEBP|
+   		|AB010P|.\\src\\main\\resources\\gambarnico\\maung_1.tiff|TIFF|
+   		|AB011P|.\\src\\main\\resources\\gambarnico\\maung.psd|PSD|

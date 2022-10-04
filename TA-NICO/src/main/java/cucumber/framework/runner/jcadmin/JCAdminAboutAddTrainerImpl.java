@@ -94,7 +94,7 @@ public class JCAdminAboutAddTrainerImpl {
 
 	@When("^(.*) Admin memasukkan file (.*) trainer$")
 	public void kode_admin_memasukkan_file_foto_trainer(String kode, String foto) {
-		JCAbout.fotoTrainerOutline(foto);
+		JCAbout.tambahFotoTrainerAbs(foto);
 		extentTest.log(LogStatus.PASS, kode + " Admin memasukkan file " + foto + " trainer");
 	}
 

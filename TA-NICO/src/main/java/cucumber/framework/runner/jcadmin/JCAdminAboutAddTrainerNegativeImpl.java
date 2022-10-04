@@ -26,6 +26,38 @@ public class JCAdminAboutAddTrainerNegativeImpl {
 		JCAbout = new JCAdminAboutPage();
 	}
 	
+	/*============================================*/
+	/*Test Tambah Data Ekstensi Foto Selain Gambar*/
+	/*============================================*/
+	@When("^(.*) Admin klik tombol tambah trainer foto selain ekstensi gambar$")
+	public void kode_admin_klik_tombol_tambah_trainer_foto_selain_ekstensi_gambar(String kode) {
+		JCAbout.goToAbout();
+		JCAbout.tambahTrainer();
+		extentTest.log(LogStatus.PASS, kode + " Admin klik tombol tambah trainer foto selain ekstensi gambar");
+	}
+
+	@When("^(.*) Admin memasukkan (.*) trainer selain ekstensi gambar$")
+	public void kode_admin_memasukkan_foto_trainer_selain_ekstensi_gambar(String kode, String foto) {
+		JCAbout.tambahFotoTrainerAbs(foto);;
+		extentTest.log(LogStatus.PASS, kode + " Admin memasukkan " + foto + " trainer selain ekstensi gambar");
+	}
+
+	@When("^(.*) Admin mengisi nama jabatan profile dan publish no active trainer selain ekstensi gambar$")
+	public void kode_admin_mengisi_nama_jabatan_profile_dan_publish_no_active_trainer_selain_ekstensi_gambar(String kode) {
+		JCAbout.namaTrainer("Zanonim23TestInvalidFoto");
+		JCAbout.jabatanTrainer("Trainer");
+	    JCAbout.profileTrainer("Cuma buat testing invalid foto");
+		JCAbout.statusTrainer("No Active");
+		extentTest.log(LogStatus.PASS, kode + " Admin mengisi nama jabatan profile dan publish no active trainer selain ekstensi gambar");
+	}
+
+	@Then("^(.*) Admin menekan tombol simpan trainer foto selain ekstensi gambar$")
+	public void kode_admin_menekan_tombol_simpan_trainer_foto_selain_ekstensi_gambar(String kode) {
+		JCAbout.simpanData();
+		assertTrue(JCAbout.getInvalidImageType().contains("The supplied file is not a supported image type"));
+		extentTest.log(LogStatus.PASS, kode + " Admin menekan tombol simpan trainer foto selain ekstensi gambar");
+	}
+	
 	/*===================================*/
 	/*Test Tambah Data Invalid Input Nama*/
 	/*===================================*/

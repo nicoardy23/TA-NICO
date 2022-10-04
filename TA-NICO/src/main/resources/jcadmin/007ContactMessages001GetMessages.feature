@@ -9,7 +9,7 @@ Feature: Melihat Data Contact Message Berdasarkan Sorting
 		Given CO001P Admin login dan membuka halaman Contact Messages
 		Then CO001P Halaman about terbuka
 		
-	Scenario: Admin sorting data berdasarkan <sorting>
+	Scenario Outline: Admin sorting data berdasarkan <sorting>
 		When <kode> Admin membuka halaman Contact Messages
 		And <kode> Admin memilih sorting berdasarkan <sorting>
 		Then <kode> Admin mendapat data yang disorting berdasarkan <sorting>

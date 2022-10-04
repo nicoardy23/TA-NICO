@@ -3,7 +3,15 @@
 
 Feature: Mencari Trainer dan Berpindah Halaman Negative
 
-	Scenario: Mencari data trainer dengan nama500 karakter
-		When AB010N Admin mencari nama trainer pada kolom pencarian full500 karakter
-  	And AB010N Admin menekan tombol enter pada keyboard full500 karakter
-  	Then AB010N Admin menemukan data atau tidak full500 karakter
+	Scenario: Mencari data trainer dengan <case>
+		When <kode> Admin mencari <cari> pada kolom pencarian <case>
+  	And <kode> Admin menekan tombol enter pada keyboard <case>
+  	Then <kode> Admin menemukan <cari> atau tidak <case>
+  	
+   Examples:
+   	|kode|case|cari|
+   	|AB010N|nama500 karakter|NicoArdyTestPanjangggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg|
+   	|AB011N|sebagian nama500 karakter|NicoArdyTestPanjangggggggggggggggggggggggggggggggg|
+   	|AB012N|Jabatan|Trainer|
+   	|AB013N|Profile|Cuma buat testing|
+   	|AB014N|nomor data|133|

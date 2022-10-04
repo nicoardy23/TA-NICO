@@ -30,9 +30,9 @@ public class JCAdminAboutFindAndMoveTrainerImpl {
 		JCAbout = new JCAdminAboutPage();
 	}
 	
-	/*==========================*/
+	/*=================*/
 	/*Test cari trainer*/
-	/*==========================*/
+	/*=================*/
 	@When("AB012P Admin memasukkan nama trainer yang ingin dicari")
 	public void ab012p_admin_memasukkan_nama_trainer_yang_ingin_dicari() {
 		JCAbout.goToAbout();
@@ -52,9 +52,9 @@ public class JCAdminAboutFindAndMoveTrainerImpl {
 	    extentTest.log(LogStatus.PASS, "AB012P Admin dapat menemukan data trainer");
 	}
 	
-	/*==========================*/
+	/*=================*/
 	/*Berpindah Halaman*/
-	/*==========================*/
+	/*=================*/
 	@When("AB013P Admin menekan tombol halaman trainer")
 	public void ab013p_admin_menekan_tombol_halaman_trainer() {
 	    JCAbout.goToAbout();

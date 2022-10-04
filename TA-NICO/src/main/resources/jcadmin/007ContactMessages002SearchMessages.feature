@@ -5,7 +5,7 @@
 
 Feature: Mencari Data Contact Message Berdasarkan Sorting
 		
-	Scenario: Admin cari data berdasarkan sorting <sorting>
+	Scenario Outline: Admin cari data berdasarkan sorting <sorting>
 		When <kode> Admin membuka halaman Contact Messages cari
 		And <kode> Admin memilih sorting cari berdasarkan <sorting>
 		And <kode> Admin mencari <data> trainer dan menekan enter pada keyboard cari

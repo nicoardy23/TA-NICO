@@ -73,6 +73,8 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	private WebElement editJabatanTrainer;
 	@FindBy(xpath = "//textarea[@name='isi_profil']")
 	private WebElement editProfileTrainer;
+	@FindBy(xpath = "//input[@value='Pilih Gambar Ulang']")
+	private WebElement editFotoTrainerOutline;
 
 	/*----- Validasi -----*/
 	@FindBy(xpath = "//h3[normalize-space()='List Trainer']")
@@ -87,6 +89,10 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	private WebElement validJabatanLength;
 	@FindBy(xpath = "//p[contains(text(),'NicoArdyTestProfilePanjanggggggggggggggggggggggggg')]")
 	private WebElement validProfileLength;
+	@FindBy(xpath = "//div[@class='header']//p[1]")
+	private WebElement invalidImageType;
+	@FindBy(xpath = "//b[normalize-space()='Total Search : 0 Data']")
+	private WebElement invalidNamaLength;
 	
 
 	public void goToAbout() {
@@ -104,10 +110,19 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 		this.tambahFotoTrainer.sendKeys(foto);
 	}
 	
-	public void fotoTrainerOutline(String foto) {
-		Utils.delay(1, strDelay);
-		this.tambahFotoTrainer.click();
+	public void tambahFotoTrainerAbs(String foto) {
 		File upFile = new File(foto);
+		String paste = upFile.getAbsolutePath();
+		Utils.delay(1, strDelay);
+		this.tambahFotoTrainer.sendKeys(paste);
+	}
+	
+	public void fotoTrainerOutline(String foto) {
+		Utils.littleScroll();
+		Utils.delay(1, strDelay);
+		this.editFotoTrainerOutline.click();
+		File upFile = new File(foto);
+		Utils.delay(1, strDelay);
 		Utils.uploadFoto(upFile);
 	}
 	
@@ -196,6 +211,20 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 		this.editProfileTrainer.sendKeys("Testing trainer baru");
 	}
 	
+	public void editNamaInvalid(String input) {
+		this.editNamaTrainer.clear();
+		this.editNamaTrainer.sendKeys(input);
+	}
+	
+	public void editJabatanInvalid(String input) {
+		this.editJabatanTrainer.clear();
+		this.editJabatanTrainer.sendKeys(input);
+	}
+	
+	public void editProfileInvalid(String input) {
+		this.editProfileTrainer.clear();
+		this.editProfileTrainer.sendKeys(input);
+	}
 	
 	
 	public void pindahHalaman() {
@@ -231,6 +260,14 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	
 	public String getValidProfileTrainerLength() {
 		return driverWaitTxt(driver, 3, validProfileLength);
+	}
+
+	public String getInvalidNamaTrainerLength() {
+		return driverWaitTxt(driver, 3, invalidNamaLength);
+	}
+	
+	public String getInvalidImageType() {
+		return driverWaitTxt(driver, 3, invalidImageType);
 	}
 	
     //li[class='active page-item'] a[class='page-link']
