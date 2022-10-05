@@ -83,11 +83,15 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	private WebElement validTambah;
 	@FindBy(xpath = "//div[@class='alert alert-danger mt-2']")
 	private WebElement invalidInput;
-	@FindBy(xpath = "//p[contains(text(),'NicoArdyTestPanjangggggggggggggggggggggggggggggggg')]")
+//	@FindBy(xpath = "//p[contains(text(),'NicoArdyTestPanjangggggggggggggggggggggggggggggggg')]")
+//	private WebElement validNamaLength;
+	@FindBy(xpath = "//figure[1]//a[1]//div[1]//p[2]")
 	private WebElement validNamaLength;
 	@FindBy(xpath = "//figure[1]//a[1]//div[1]//p[3]")
 	private WebElement validJabatanLength;
-	@FindBy(xpath = "//p[contains(text(),'NicoArdyTestProfilePanjanggggggggggggggggggggggggg')]")
+//	@FindBy(xpath = "//p[contains(text(),'NicoArdyTestProfilePanjanggggggggggggggggggggggggg')]")
+//	private WebElement validProfileLength;
+	@FindBy(xpath = "//figure[1]//a[1]//div[1]//p[4]")
 	private WebElement validProfileLength;
 	@FindBy(xpath = "//div[@class='header']//p[1]")
 	private WebElement invalidImageType;

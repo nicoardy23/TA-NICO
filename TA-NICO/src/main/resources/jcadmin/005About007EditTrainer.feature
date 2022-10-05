@@ -8,7 +8,6 @@ Feature: Mengedit Trainer
   	And <kode> Admin mengganti status publish trainer ke <status>
   	And <kode> Admin menekan tombol simpan publish trainer
   	Then <kode> Status publish trainer berubah menjadi <status>
-  
    Examples:
    	|status|kode|
    	|No Active|AB014P|

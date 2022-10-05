@@ -13,7 +13,6 @@ Feature: Melihat Data Contact Message Berdasarkan Sorting
 		When <kode> Admin membuka halaman Contact Messages
 		And <kode> Admin memilih sorting berdasarkan <sorting>
 		Then <kode> Admin mendapat data yang disorting berdasarkan <sorting>
-	
 	 Examples: 
 	  |kode|sorting|
 	  |CO002P|Nama|

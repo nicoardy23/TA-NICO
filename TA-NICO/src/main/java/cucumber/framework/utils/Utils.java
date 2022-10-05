@@ -57,6 +57,21 @@ public class Utils {
 		js.executeScript("window.scrollBy(0,200)","");
 	}
 	
+	public static void setengahScroll(String strX) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,"+strX+")","");
+	}
+	
+	public static void scrollFullMouse(int intScrMs) {
+		try {
+			Robot rbtclr = new Robot();
+			rbtclr.mouseWheel(intScrMs);
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public static void zoomOut(int nilai) {
 		try {
 			Robot rob = new Robot();
@@ -82,6 +97,22 @@ public class Utils {
 			}
 		} catch (Exception e) {
 			System.out.println("ERROR : zoomIn Method");
+		}
+	}
+	
+	public static void clearField() {
+		try {
+			Robot rbtclr = new Robot();
+			rbtclr.keyPress(KeyEvent.VK_CONTROL);
+			rbtclr.keyPress(KeyEvent.VK_A);
+			rbtclr.keyRelease(KeyEvent.VK_CONTROL);
+			rbtclr.keyRelease(KeyEvent.VK_A);
+			delay(1, "y");
+			rbtclr.keyPress(KeyEvent.VK_BACK_SPACE);
+			rbtclr.keyRelease(KeyEvent.VK_BACK_SPACE);
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	

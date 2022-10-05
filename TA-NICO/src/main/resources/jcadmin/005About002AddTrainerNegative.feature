@@ -3,12 +3,11 @@
 
 Feature: Menambah About Negative
 
-	Scenario: Tambah trainer negative masukkan foto dengan <eks>
+	Scenario Outline: Tambah trainer negative masukkan foto dengan <eks>
 		When <kode> Admin klik tombol tambah trainer foto selain ekstensi gambar
   	And <kode> Admin memasukkan <foto> trainer selain ekstensi gambar
   	And <kode> Admin mengisi nama jabatan profile dan publish no active trainer selain ekstensi gambar
   	Then <kode> Admin menekan tombol simpan trainer foto selain ekstensi gambar
-  
    Examples:
    |kode|eks|foto|
    |AB001N|mp4|.\\src\\main\\resources\\gambarnico\\testFotoInvalid.mp4|

@@ -9,7 +9,6 @@ Feature: Edit Foto Trainer Negative
   	When <kode> Admin menekan kotak profile trainer negative <case>
   	And <kode> Admin mengganti foto trainer negative dengan <foto>
   	Then <kode> Admin menekan tombol simpan trainer negative <case>
-  
    Examples:
    	|kode|case|foto|
    	|AB015N|ekstensi video|.\\src\\main\\resources\\gambarnico\\testFotoInvalid.mp4|

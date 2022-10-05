@@ -45,8 +45,10 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 	private WebElement pindahHalaman;
 	@FindBy(css = "li[class='active page-item'] a[class='page-link']")
 	private WebElement validPindahHalaman;	
-//	@FindBy(xpath = "//a[normalize-space()='2']")
-//	private WebElement btnPageTwo;
+	@FindBy(xpath = "//a[@aria-label='Next']")
+	private WebElement btnNextPage;
+	@FindBy(xpath = "//a[normalize-space()='4']")
+	private WebElement getValidPage;
 	
 	/*----- Validasi -----*/
 	@FindBy(xpath = "//h3[normalize-space()='Data Contact Messages']")
@@ -61,6 +63,8 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 	private WebElement validSubject;
 	@FindBy(xpath = "//div[@id='pageWrapper']/div[2]/div[2]/div/div[2]/div/div/div/div[2]/div/div/table/tbody/tr/td[5]")
 	private WebElement validMessage;
+	@FindBy(xpath = "//b[normalize-space()='Total Search : 0 Data']")
+	private WebElement invalidCari;
 	
 	public void goToContactMessages() {
 		Utils.delay(2, strDelay);
@@ -82,6 +86,11 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 		} catch (Exception e) {
 			System.out.println("Next");
 		}
+	}
+	
+	public void tekanBtnCari() {
+		Utils.delay(1, strDelay);
+		this.btnSearch.click();
 	}
 	
 	public void searchData(String data) {
@@ -113,6 +122,10 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 		return driverWaitTxt(driver, 3, validMessage);
 	}
 	
+	public String getInvalidCariData() {
+		return driverWaitTxt(driver, 3, invalidCari);
+	}
+	
 //	public void pindahHalaman() {
 //		Utils.fullScroll();
 //		Utils.delay(1, strDelay);
@@ -128,5 +141,23 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 	public String getValidPindah() {
 		Utils.fullScroll();
 		return driverWaitTxt(driver, 5, validPindahHalaman);
+	}
+	
+	public void btnNextPage() {
+		Utils.fullScroll();
+		Utils.delay(1, strDelay);
+		this.btnNextPage.click();
+	}
+	
+	public String getValidPageAct() {
+		return driverWaitTxt(driver, 5, getValidPage);
+	}
+	
+	public String getValPage(int page) {
+//		String get = this.getValidPage.getText();
+//		Integer parse = Integer.parseInt(get);
+		Integer next = page + 3;
+		WebElement impl = driver.findElement(By.xpath("//a[normalize-space()='" + next.toString() + "']"));
+		return driverWaitTxt(driver, 5, impl);
 	}
 }

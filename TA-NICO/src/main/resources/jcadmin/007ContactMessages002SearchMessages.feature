@@ -10,7 +10,6 @@ Feature: Mencari Data Contact Message Berdasarkan Sorting
 		And <kode> Admin memilih sorting cari berdasarkan <sorting>
 		And <kode> Admin mencari <data> trainer dan menekan enter pada keyboard cari
 		Then <kode> Admin mendapat data <data> yang disorting dengan <sorting>
-	
 	 Examples: 
 	  |kode|sorting|data|
 	  |CO007P|Nama|zzzozooo|
