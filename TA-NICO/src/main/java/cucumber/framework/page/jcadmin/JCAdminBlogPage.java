@@ -237,16 +237,16 @@ public class JCAdminBlogPage  extends JCAdminLoginPage{
 	}
 	
 	public String getValidContentPreview() {
-		return driverWaitTxt(driver, 3, editBodyField);
+		return driverWaitTxt(driver, 10, editBodyField);
 	}
 	
 	public String getValidContentBody() {
-		return driverWaitTxt(driver, 3, editBodyField);
+		return driverWaitTxt(driver, 10, editBodyField);
 	}
 	
 	public String getInvalidInputContent() {
 		Utils.littleScroll();
-		return driverWaitTxt(driver, 3, invalidInput);
+		return driverWaitTxt(driver, 10, invalidInput);
 	}
 	
 }

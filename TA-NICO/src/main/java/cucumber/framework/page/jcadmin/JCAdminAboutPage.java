@@ -1,3 +1,4 @@
+
 package cucumber.framework.page.jcadmin;
 
 import java.awt.AWTException;
@@ -159,12 +160,12 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	
 	public String getValidAbout() {
 		Utils.delay(1, strDelay);
-		return this.validAbout.getText();
+		return driverWaitTxt(driver, 10, validAbout);
 	}
 
 	public String getValidTambah() {
 		Utils.delay(1, strDelay);
-		return this.validTambah.getText();
+		return driverWaitTxt(driver, 10, validTambah);
 	}
 	
 	
@@ -188,7 +189,7 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	
 	public String getValidCari() {
 		Utils.delay(1, strDelay);
-		return this.ambilProfilTrainer.getText();
+		return driverWaitTxt(driver, 10, ambilProfilTrainer);
 	}
 	
 	public void editDataTrainer() {
@@ -239,7 +240,7 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	
 	public String getValidPindah() {
 		Utils.fullScroll();
-		return driverWaitTxt(driver, 5, validPindahHalaman);
+		return driverWaitTxt(driver, 10, validPindahHalaman);
 	}
 	
 	public void gantiStatus(String status) {
@@ -247,31 +248,31 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	}
 	
 	public String getValidStatus() {
-		return driverWaitTxt(driver, 5, tambahStatusPublish);
+		return driverWaitTxt(driver, 10, tambahStatusPublish);
 	}
 	
 	public String getInvalidInput() {
-		return driverWaitTxt(driver, 3, invalidInput);
+		return driverWaitTxt(driver, 10, invalidInput);
 	}
 	
 	public String getValidNamaTrainerLength() {
-		return driverWaitTxt(driver, 3, validNamaLength);
+		return driverWaitTxt(driver, 10, validNamaLength);
 	}
 	
 	public String getValidJabatanTrainerLength() {
-		return driverWaitTxt(driver, 3, validJabatanLength);
+		return driverWaitTxt(driver, 10, validJabatanLength);
 	}
 	
 	public String getValidProfileTrainerLength() {
-		return driverWaitTxt(driver, 3, validProfileLength);
+		return driverWaitTxt(driver, 10, validProfileLength);
 	}
 
 	public String getInvalidNamaTrainerLength() {
-		return driverWaitTxt(driver, 3, invalidNamaLength);
+		return driverWaitTxt(driver, 10, invalidNamaLength);
 	}
 	
 	public String getInvalidImageType() {
-		return driverWaitTxt(driver, 3, invalidImageType);
+		return driverWaitTxt(driver, 10, invalidImageType);
 	}
 	
     //li[class='active page-item'] a[class='page-link']

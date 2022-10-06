@@ -9,6 +9,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import cucumber.framework.constant.Constants;
 import cucumber.framework.page.jcadmin.JCAdminContactMessages;
+import cucumber.framework.utils.Utils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -141,6 +142,7 @@ public class JCAdminContactMessagesSearchNegativeImpl {
 	@Then("^(.*) Admin menekan tombol cari (.*) pada kolom pencarian berdasar (.*)$")
 	public void kode_admin_menekan_tombol_cari_input_pada_kolom_pencarian_berdasar_sorting(String kode, String input, String sort) {
 		jcContact.tekanBtnCari();
+		Utils.delay(1, strDelay);
 		if (sort.equals("Nama")) {
 			assertEquals(jcContact.getValidNama(), input);
 		} else if (sort.equals("Email")) {

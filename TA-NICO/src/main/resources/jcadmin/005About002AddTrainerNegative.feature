@@ -55,4 +55,3 @@ Feature: Menambah About Negative
    	And AB009N Admin mengisi profile trainer dengan input profile500 karakter
   	And AB009N Admin memilih publish no active trainer input profile500 karakter
   	Then AB009N Admin menekan tombol simpan dan cari trainer input profile500 karakter
-  

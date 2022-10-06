@@ -78,7 +78,7 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 	}
 	
 	public void tekanEnter() {
-		Utils.delay(1, strDelay);
+		Utils.delay(3, strDelay);
 		try {
 			Robot robot = new Robot();
 			robot.keyPress(KeyEvent.VK_ENTER);
@@ -99,31 +99,31 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 	}
 	
 	public String getValidCoMes() {
-		return driverWaitTxt(driver, 3, validContactMessages);
+		return driverWaitTxt(driver, 10, validContactMessages);
 	}
 	
 	public String getValidNama() {
-		return driverWaitTxt(driver, 3, validNama);
+		return driverWaitTxt(driver, 10, validNama);
 	}
 	
 	public String getValidEmail() {
-		return driverWaitTxt(driver, 3, validEmail);
+		return driverWaitTxt(driver, 10, validEmail);
 	}
 	
 	public String getValidPhoneNumber() {
-		return driverWaitTxt(driver, 3, validPhoneNumber);
+		return driverWaitTxt(driver, 10, validPhoneNumber);
 	}
 	
 	public String getValidSubject() {
-		return driverWaitTxt(driver, 3, validSubject);
+		return driverWaitTxt(driver, 10, validSubject);
 	}
 	
 	public String getValidMessage() {
-		return driverWaitTxt(driver, 3, validMessage);
+		return driverWaitTxt(driver, 10, validMessage);
 	}
 	
 	public String getInvalidCariData() {
-		return driverWaitTxt(driver, 3, invalidCari);
+		return driverWaitTxt(driver, 10, invalidCari);
 	}
 	
 //	public void pindahHalaman() {
@@ -140,17 +140,18 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 	
 	public String getValidPindah() {
 		Utils.fullScroll();
-		return driverWaitTxt(driver, 5, validPindahHalaman);
+		return driverWaitTxt(driver, 10, validPindahHalaman);
 	}
 	
 	public void btnNextPage() {
 		Utils.fullScroll();
+		
 		Utils.delay(1, strDelay);
 		this.btnNextPage.click();
 	}
 	
 	public String getValidPageAct() {
-		return driverWaitTxt(driver, 5, getValidPage);
+		return driverWaitTxt(driver, 10, getValidPage);
 	}
 	
 	public String getValPage(int page) {
@@ -158,6 +159,6 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 //		Integer parse = Integer.parseInt(get);
 		Integer next = page + 3;
 		WebElement impl = driver.findElement(By.xpath("//a[normalize-space()='" + next.toString() + "']"));
-		return driverWaitTxt(driver, 5, impl);
+		return driverWaitTxt(driver, 10, impl);
 	}
 }
