@@ -101,83 +101,83 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	
 
 	public void goToAbout() {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.btnAbout.click();
 	}
 	
 	public void tambahTrainer() {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.btnTambahTrainer.click();
 	}
 	
 	public void fotoTrainer(String foto) {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.tambahFotoTrainer.sendKeys(foto);
 	}
 	
 	public void tambahFotoTrainerAbs(String foto) {
 		File upFile = new File(foto);
 		String paste = upFile.getAbsolutePath();
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.tambahFotoTrainer.sendKeys(paste);
 	}
 	
 	public void fotoTrainerOutline(String foto) {
 		Utils.littleScroll();
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.editFotoTrainerOutline.click();
 		File upFile = new File(foto);
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		Utils.uploadFoto(upFile);
 	}
 	
 	public void namaTrainer(String nama) {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.tambahNamaTrainer.sendKeys(nama);
 	}
 	
 	public void jabatanTrainer(String jabatan) {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.tambahJabatanTrainer.sendKeys(jabatan);
 	}
 	
 	public void profileTrainer(String profile) {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.tambahProfileTrainer.sendKeys(profile);
 	}
 	
 	public void statusTrainer(String status) {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		Select selc = new Select(this.tambahStatusPublish);
 		selc.selectByVisibleText(status);
 	}
 	
 	public void simpanData() {
 		Utils.fullScroll();;
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.btnSubmit.click();
 	}
 	
 	public String getValidAbout() {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		return driverWaitTxt(driver, 10, validAbout);
 	}
 
 	public String getValidTambah() {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		return driverWaitTxt(driver, 10, validTambah);
 	}
 	
 	
 	public void cariTrainer(String cari) {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.btnCariTrainer.click();
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.btnCariTrainer.sendKeys(cari);
 	}
 	
 	public void tekanEnter() {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		try {
 			Robot robot = new Robot();
 			robot.keyPress(KeyEvent.VK_ENTER);
@@ -188,7 +188,7 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	}
 	
 	public String getValidCari() {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		return driverWaitTxt(driver, 10, ambilProfilTrainer);
 	}
 	
@@ -234,7 +234,7 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	
 	public void pindahHalaman() {
 		Utils.fullScroll();
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.pindahHalaman.click();
 	}
 	

@@ -72,7 +72,7 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 	}
 	
 	public void sortSelection(String select) {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		Select selc = new Select(this.sortSelect);
 		selc.selectByVisibleText(select);
 	}
@@ -89,12 +89,12 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 	}
 	
 	public void tekanBtnCari() {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.btnSearch.click();
 	}
 	
 	public void searchData(String data) {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.search.sendKeys(data);
 	}
 	
@@ -128,13 +128,13 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 	
 //	public void pindahHalaman() {
 //		Utils.fullScroll();
-//		Utils.delay(1, strDelay);
+//		Utils.delay(2, strDelay);
 //		this.pindahHalaman.click();
 //	}
 	
 	public void pindahHalaman(String link) {
 		Utils.fullScroll();
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		driver.findElement(By.linkText(link)).click();
 	}
 	
@@ -146,7 +146,7 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 	public void btnNextPage() {
 		Utils.fullScroll();
 		
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.btnNextPage.click();
 	}
 	

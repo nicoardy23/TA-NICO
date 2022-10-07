@@ -23,25 +23,3 @@ plugin = {"pretty","html:target/jcadmin/htmlreport/LoginRunner.html"})
 public class JCAdminRunner extends AbstractTestNGCucumberTests{
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

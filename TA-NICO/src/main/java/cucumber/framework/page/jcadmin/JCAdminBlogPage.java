@@ -124,7 +124,7 @@ public class JCAdminBlogPage  extends JCAdminLoginPage{
 		this.bodyPreview.click();
 		Utils.delay(3, strDelay);
 		clearField();
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.bodyPreview.sendKeys("ini adalah body preview blog pertama cucumer");
 		Utils.delay(3, strDelay);
 	}
@@ -151,12 +151,12 @@ public class JCAdminBlogPage  extends JCAdminLoginPage{
 	
 	/*----- Extras Nico -----*/
 	public void cariJudulBlog(String cari) {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.cariJudul.sendKeys(cari);
 	}
 	
 	public void tekanEnter() {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		try {
 			Robot robot = new Robot();
 			robot.keyPress(KeyEvent.VK_ENTER);
@@ -168,44 +168,44 @@ public class JCAdminBlogPage  extends JCAdminLoginPage{
 	
 	public void tekanKotakBlog() {
 		Utils.littleScroll();
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.tapKotakBlog.click();
 	}
 	
 	public void pilihFotoUlang(String foto) {
 		Utils.littleScroll();
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.pilihGambarUlang.click();
 		File upFile = new File(foto);
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		Utils.uploadFoto(upFile);
 	}
 	
 	public void klikSimpan() {
 		Utils.fullScroll();
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.btnEditSubmit.click();
 	}
 	
 	public String getValidFoto() {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		return this.getValueFoto.getAttribute("value");
 	}
 	
 	public void editJudulBlog(String judul) {
 		Utils.littleScroll();
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.editJudul.sendKeys(judul);
 	}
 	
 	public void editPublish(String status) {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		Select selc = new Select(this.optPublish);
 		selc.selectByVisibleText(status);
 	}
 	
 	public void editSetTop(String set) {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		Select selc = new Select(this.optSetTop);
 		selc.selectByVisibleText(set);
 	}
@@ -223,16 +223,16 @@ public class JCAdminBlogPage  extends JCAdminLoginPage{
 	}
 	
 	public void editContentPreview(String content) {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.editBodyPreview.clear();
-		Utils.delay(1, content);
+		Utils.delay(2, strDelay);
 		this.editBodyPreview.sendKeys(content);
 	}
 	
 	public void editContentBody(String content) {
-		Utils.delay(1, strDelay);
+		Utils.delay(2, strDelay);
 		this.editBodyField.clear();
-		Utils.delay(1, content);
+		Utils.delay(2, strDelay);
 		this.editBodyField.sendKeys(content);
 	}
 	
