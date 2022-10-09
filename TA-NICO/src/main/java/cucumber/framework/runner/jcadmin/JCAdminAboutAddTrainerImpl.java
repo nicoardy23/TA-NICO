@@ -57,7 +57,7 @@ public class JCAdminAboutAddTrainerImpl {
 
 	@When("^(.*) Admin mengisi data foto nama jabatan dan profile trainer$")
 	public void kode_admin_mengisi_data_foto_nama_jabatan_dan_profile_trainer(String kode) {
-		jcAbout.fotoTrainer("C:\\Users\\NEXSOFT\\Desktop\\Test TA\\error-wait.GIF");
+		jcAbout.tambahFotoTrainerAbs(".\\src\\main\\resources\\gambarnico\\error-wait.gif");
 	    jcAbout.namaTrainer("Zanonim23");
 	    jcAbout.jabatanTrainer("Trainer");
 	    jcAbout.profileTrainer("Cuma buat testing");
