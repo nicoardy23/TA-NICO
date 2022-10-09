@@ -16,10 +16,15 @@ features = {"src/main/resources/jcadmin/005About001AddTrainer.feature",
 		"src/main/resources/jcadmin/007ContactMessages002SearchMessages.feature",
 		"src/main/resources/jcadmin/007ContactMessages003MovePage.feature",
 		"src/main/resources/jcadmin/007ContactMessages004CariNegative.feature",
-		"src/main/resources/jcadmin/005About08FindAndEdit.feature"},
+		"src/main/resources/jcadmin/005About008FindAndEdit.feature"},
 glue = "cucumber.framework.runner.jcadmin",	
 monochrome=true,
 plugin = {"pretty","html:target/jcadmin/htmlreport/LoginRunner.html"})
 public class JCAdminRunner extends AbstractTestNGCucumberTests{
-
+	
 }
+
+
+
+
+

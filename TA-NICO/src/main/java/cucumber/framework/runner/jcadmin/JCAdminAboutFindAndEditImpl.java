@@ -40,7 +40,7 @@ public class JCAdminAboutFindAndEditImpl {
 		jcAbout.goToAbout();
 	    jcAbout.cariTrainer("Anonim23");
 	    jcAbout.tekanEnter();
-	    extentTest.log(LogStatus.PASS, "AB021N Admin mencari nama trainer dan menekan enter foto cari edit");
+	    extentTest.log(LogStatus.PASS, "AB024N Admin mencari nama trainer dan menekan enter foto cari edit");
 	}
 
 	@When("AB024N Admin menekan kotak profile trainer foto cari edit")

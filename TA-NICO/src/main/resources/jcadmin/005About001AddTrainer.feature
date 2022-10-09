@@ -13,7 +13,6 @@ Feature: Menambah About
     And <kode> Admin memberi publish <status>
     And <kode> Admin menekan tombol simpan trainer
     Then <kode> Data trainer ditambahkan
-    
    Examples:
    	|status|kode|
    	|Active|AB002P|
@@ -25,7 +24,6 @@ Feature: Menambah About
   	And <kode> Admin mengisi data trainer dengan status status no active
   	And <kode> Admin menekan tombol simpan trainer berbagai foto
   	Then <kode> Data trainer ditambahkan berbagai gambar
-  	
    Examples:
    		|kode|foto|eks|
    		|AB004P|.\\src\\main\\resources\\gambarnico\\maung.jpg|JPG|

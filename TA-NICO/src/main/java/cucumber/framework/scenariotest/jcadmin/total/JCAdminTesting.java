@@ -41,7 +41,8 @@ public enum JCAdminTesting {
 	N038("Admin mencari data data berdasarkan Email"),
 	N039("Admin mencari data data berdasarkan Phone Number"),
 	N040("Admin mencari data data berdasarkan Subject"),
-	N041("Admin mencari data sorting dengan tekan tombol cari");
+	N041("Admin mencari data sorting dengan tekan tombol cari")
+	;
 	
 	private String testName;
 	
