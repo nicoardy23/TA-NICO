@@ -71,7 +71,7 @@ public class JCAdminAboutAddTrainerNegativeImpl {
 
 	@When("AB004N Admin memasukkan foto trainer invalid input nama")
 	public void ab004n_admin_memasukkan_foto_trainer_invalid_input_nama() {
-		jcAbout.fotoTrainer("C:\\Users\\NEXSOFT\\Desktop\\Test TA\\error-wait.GIF");
+		jcAbout.fotoTrainer(".\\src\\main\\resources\\gambarnico\\error-wait.gif");
 		extentTest.log(LogStatus.PASS, "AB004N Admin memasukkan foto trainer invalid input nama");
 	}
 
@@ -108,7 +108,7 @@ public class JCAdminAboutAddTrainerNegativeImpl {
 
 	@When("AB005N Admin memasukkan foto dan nama trainer invalid input jabatan")
 	public void ab005n_admin_memasukkan_foto_dan_nama_trainer_invalid_input_jabatan() {
-		jcAbout.fotoTrainer("C:\\Users\\NEXSOFT\\Desktop\\Test TA\\error-wait.GIF");
+		jcAbout.fotoTrainer(".\\src\\main\\resources\\gambarnico\\error-wait.gif");
 		jcAbout.namaTrainer("Zanonim23");
 		extentTest.log(LogStatus.PASS, "AB005N Admin memasukkan foto dan nama trainer invalid input jabatan");
 	}
@@ -145,7 +145,7 @@ public class JCAdminAboutAddTrainerNegativeImpl {
 
 	@When("AB006N Admin memasukkan foto nama dan jabatan trainer invalid input profile")
 	public void ab006n_admin_memasukkan_foto_nama_dan_jabatan_trainer_invalid_input_profile() {
-		jcAbout.fotoTrainer("C:\\Users\\NEXSOFT\\Desktop\\Test TA\\error-wait.GIF");
+		jcAbout.fotoTrainer(".\\src\\main\\resources\\gambarnico\\error-wait.gif");
 		jcAbout.namaTrainer("Zanonim23");
 		jcAbout.jabatanTrainer("Trainer");
 		extentTest.log(LogStatus.PASS, "AB006N Admin memasukkan foto nama dan jabatan trainer invalid input profile");
@@ -182,7 +182,7 @@ public class JCAdminAboutAddTrainerNegativeImpl {
 
 	@When("AB007N Admin memasukkan foto trainer input nama500 karakter")
 	public void ab007n_admin_memasukkan_foto_trainer_input_nama500_karakter() {
-		jcAbout.fotoTrainer("C:\\Users\\NEXSOFT\\Desktop\\Test TA\\error-wait.GIF");
+		jcAbout.fotoTrainer(".\\src\\main\\resources\\gambarnico\\error-wait.gif");
 		extentTest.log(LogStatus.PASS, "AB007N Admin memasukkan foto trainer input nama500 karakter");
 	}
 
@@ -221,7 +221,7 @@ public class JCAdminAboutAddTrainerNegativeImpl {
 
 	@When("AB008N Admin memasukkan foto dan nama trainer input jabatan500 karakter")
 	public void ab008n_admin_memasukkan_foto_dan_nama_trainer_input_jabatan500_karakter() {
-		jcAbout.fotoTrainer("C:\\Users\\NEXSOFT\\Desktop\\Test TA\\error-wait.GIF");
+		jcAbout.fotoTrainer(".\\src\\main\\resources\\gambarnico\\error-wait.gif");
 		jcAbout.namaTrainer("NicoArdyTestJabatanPanjang");
 		extentTest.log(LogStatus.PASS, "AB008N Admin memasukkan foto dan nama trainer input jabatan500 karakter");
 	}
@@ -260,7 +260,7 @@ public class JCAdminAboutAddTrainerNegativeImpl {
 
 	@When("AB009N Admin memasukkan foto nama dan jabatan trainer input profile500 karakter")
 	public void ab009n_admin_memasukkan_foto_nama_dan_jabatan_trainer_input_profile500_karakter() {
-		jcAbout.fotoTrainer("C:\\Users\\NEXSOFT\\Desktop\\Test TA\\error-wait.GIF");
+		jcAbout.fotoTrainer(".\\src\\main\\resources\\gambarnico\\error-wait.gif");
 		jcAbout.namaTrainer("NicoArdyTestProfilePanjang");
 		jcAbout.jabatanTrainer("TestProfilePanjang");
 		extentTest.log(LogStatus.PASS, "AB009N Admin memasukkan foto nama dan jabatan trainer input profile500 karakter");
