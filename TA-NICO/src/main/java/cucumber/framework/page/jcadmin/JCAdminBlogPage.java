@@ -33,6 +33,11 @@ public class JCAdminBlogPage  extends JCAdminLoginPage{
 		return new WebDriverWait(driver, Duration.ofSeconds(delays))
 				.until(ExpectedConditions.visibilityOf(element)).getText();
 	}
+
+	public static void driverWaitClick(WebDriver driver, int delays, WebElement element) {
+		new WebDriverWait(driver, Duration.ofSeconds(delays))
+				.until(ExpectedConditions.visibilityOf(element)).click();
+	}
 	/*-----------------------*/
 	
 	@FindBy(linkText = "Home")
@@ -169,13 +174,13 @@ public class JCAdminBlogPage  extends JCAdminLoginPage{
 	public void tekanKotakBlog() {
 		Utils.littleScroll();
 		Utils.delay(2, strDelay);
-		this.tapKotakBlog.click();
+		driverWaitClick(driver, 10, tapKotakBlog);
 	}
 	
 	public void pilihFotoUlang(String foto) {
 		Utils.littleScroll();
 		Utils.delay(2, strDelay);
-		this.pilihGambarUlang.click();
+		driverWaitClick(driver, 10, pilihGambarUlang); 
 		File upFile = new File(foto);
 		Utils.delay(2, strDelay);
 		Utils.uploadFoto(upFile);
@@ -184,7 +189,7 @@ public class JCAdminBlogPage  extends JCAdminLoginPage{
 	public void klikSimpan() {
 		Utils.fullScroll();
 		Utils.delay(2, strDelay);
-		this.btnEditSubmit.click();
+		driverWaitClick(driver, 10, btnEditSubmit); 
 	}
 	
 	public String getValidFoto() {

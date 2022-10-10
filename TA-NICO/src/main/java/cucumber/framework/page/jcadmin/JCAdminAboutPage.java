@@ -35,6 +35,11 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 				.until(ExpectedConditions.visibilityOf(element)).getText();
 	}
 	
+	public static void driverWaitClick(WebDriver driver, int delays, WebElement element) {
+		new WebDriverWait(driver, Duration.ofSeconds(delays))
+				.until(ExpectedConditions.visibilityOf(element)).click();
+	}
+	
 	/*----- Main -----*/
 	@FindBy(xpath = "//ul[@id='simple-bar']/div/div[2]/div/div/div/li[5]/a/span")
 	private WebElement btnAbout;
@@ -102,12 +107,12 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 
 	public void goToAbout() {
 		Utils.delay(2, strDelay);
-		this.btnAbout.click();
+		driverWaitClick(driver, 10, btnAbout);
 	}
 	
 	public void tambahTrainer() {
 		Utils.delay(2, strDelay);
-		this.btnTambahTrainer.click();
+		driverWaitClick(driver, 10, btnTambahTrainer);
 	}
 	
 	public void fotoTrainer(String foto) {
@@ -125,7 +130,7 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	public void fotoTrainerOutline(String foto) {
 		Utils.littleScroll();
 		Utils.delay(2, strDelay);
-		this.editFotoTrainerOutline.click();
+		driverWaitClick(driver, 10, editFotoTrainerOutline);
 		File upFile = new File(foto);
 		Utils.delay(2, strDelay);
 		Utils.uploadFoto(upFile);
@@ -155,7 +160,7 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	public void simpanData() {
 		Utils.fullScroll();;
 		Utils.delay(2, strDelay);
-		this.btnSubmit.click();
+		driverWaitClick(driver, 10, btnSubmit); 
 	}
 	
 	public String getValidAbout() {
@@ -171,7 +176,7 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	
 	public void cariTrainer(String cari) {
 		Utils.delay(2, strDelay);
-		this.btnCariTrainer.click();
+		driverWaitClick(driver, 10, btnCariTrainer); 
 		Utils.delay(2, strDelay);
 		this.btnCariTrainer.sendKeys(cari);
 	}
@@ -193,12 +198,14 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	}
 	
 	public void editDataTrainer() {
-		this.tekanProfilTrainer.click();
+		driverWaitClick(driver, 10, tekanProfilTrainer); 
 	}
 	
 	public void editFotoTrainer() {
 		this.editFotoTrainer.clear();
-		this.editFotoTrainer.sendKeys("C:\\Users\\NEXSOFT\\Desktop\\Test TA\\mnk.PNG");
+		File upFile = new File(".\\src\\main\\resources\\gambarnico\\mnk.png");
+		String paste = upFile.getAbsolutePath();
+		this.editFotoTrainer.sendKeys(paste);
 	}
 	
 	public void editNamaTrainer() {
@@ -235,7 +242,7 @@ public class JCAdminAboutPage extends JCAdminLoginPage {
 	public void pindahHalaman() {
 		Utils.fullScroll();
 		Utils.delay(2, strDelay);
-		this.pindahHalaman.click();
+		driverWaitClick(driver, 10, pindahHalaman); 
 	}
 	
 	public String getValidPindah() {

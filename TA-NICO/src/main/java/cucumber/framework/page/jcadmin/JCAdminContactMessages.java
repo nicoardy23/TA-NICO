@@ -32,6 +32,11 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 				.until(ExpectedConditions.visibilityOf(element)).getText();
 	}
 	
+	public static void driverWaitClick(WebDriver driver, int delays, WebElement element) {
+		new WebDriverWait(driver, Duration.ofSeconds(delays))
+				.until(ExpectedConditions.visibilityOf(element)).click();
+	}
+	
 	/*----- Main -----*/
 	@FindBy(linkText = "Contact Messages")
 	private WebElement btnAbout;
@@ -68,7 +73,7 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 	
 	public void goToContactMessages() {
 		Utils.delay(2, strDelay);
-		this.btnAbout.click();
+		driverWaitClick(driver, 10, btnAbout);
 	}
 	
 	public void sortSelection(String select) {
@@ -90,7 +95,7 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 	
 	public void tekanBtnCari() {
 		Utils.delay(2, strDelay);
-		this.btnSearch.click();
+		driverWaitClick(driver, 10, btnSearch); 
 	}
 	
 	public void searchData(String data) {
@@ -135,7 +140,7 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 	public void pindahHalaman(String link) {
 		Utils.fullScroll();
 		Utils.delay(2, strDelay);
-		driver.findElement(By.linkText(link)).click();
+		driverWaitClick(driver, 10, driver.findElement(By.linkText(link)));
 	}
 	
 	public String getValidPindah() {
@@ -147,7 +152,7 @@ public class JCAdminContactMessages extends JCAdminLoginPage{
 		Utils.fullScroll();
 		
 		Utils.delay(2, strDelay);
-		this.btnNextPage.click();
+		driverWaitClick(driver, 10, btnNextPage); 
 	}
 	
 	public String getValidPageAct() {

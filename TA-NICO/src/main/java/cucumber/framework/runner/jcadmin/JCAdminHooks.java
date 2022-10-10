@@ -25,11 +25,11 @@ public class JCAdminHooks {
 	public static ExtentReports reports = new ExtentReports("target/jcadmin/extentreport/jcadmin-about-contact-messages-outline-xr.html");
 	private static JCAdminTesting[] tests = JCAdminTesting.values();
 	//All
-	private static final int[] DATA_OUTLINE = {1,2,8,3,1,1,1,1,1,1,1,1,5,2,1,1,1,1,3,3,3,1,1,1,1,2,1,1,6,2,2,1,5,5,2,1,4,4,4,4,5};
+//	private static final int[] DATA_OUTLINE = {1,2,8,3,1,1,1,1,1,1,1,1,5,2,1,1,1,1,3,3,3,1,1,1,1,2,1,1,6,2,2,1,5,5,2,1,4,4,4,4,5};
 	
 	//About
 //	private static final int[] DATA_OUTLINE = {1,2,8,1,1,2,1,1,1,1};
-//	private static final int[] DATA_OUTLINE = {3,1,1,1,1,1,1,5,3,3,3,1,1,1,1,2};
+	private static final int[] DATA_OUTLINE = {3,1,1,1,1,1,1,5,3,3,3,1,1,1,1,2};
 
 	//Blog
 //	private static final int[] DATA_OUTLINE = {1,1,6,2,2};
