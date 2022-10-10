@@ -1,4 +1,4 @@
-package cucumber.framework.scenariotest.jcadmin.total;
+package cucumber.framework.scenariotest.jcadmin;
 
 public enum JCAdminTesting {
 	N001("Membuka halaman about"),

@@ -11,7 +11,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import cucumber.framework.connection.DriverSingleton;
 import cucumber.framework.constant.Constants;
-import cucumber.framework.scenariotest.jcadmin.total.JCAdminTesting;
+import cucumber.framework.scenariotest.jcadmin.JCAdminTesting;
 import cucumber.framework.utils.Utils;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
