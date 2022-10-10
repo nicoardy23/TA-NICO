@@ -44,7 +44,7 @@ public class JCAdminAboutFindAndMoveNegativeImpl {
 
 	@Then("^(.*) Admin menemukan (.*) atau tidak (.*)")
 	public void kode_admin_menemukan_cari_atau_tidak_case(String kode, String cari, String kasus) {
-		if (kasus.equals("sebagian nama500 karakter")) {
+		if (kasus.equals("sebagian nama500 karakter")||kasus.equals("nama500 karakter")) {
 			assertTrue(jcAbout.getValidNamaTrainerLength().contains(cari));
 		} else {
 			assertTrue(jcAbout.getInvalidNamaTrainerLength().contains("Total Search : 0 Data"));
